@@ -1,3 +1,6 @@
+html {
+  font-size: clamp(14px, 2.2vw, 16px);
+}
 .head {
   height: 24vh;
   margin-bottom: 1rem;
@@ -56,18 +59,23 @@
 /* Homepage */
 .Homepage {
   width: 50%;
-  margin: auto;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 .boxlinks {
   margin: 0.75rem 0;
   & ul {
+    margin: 0;
+    padding: 0;
     display: flex;
     list-style: none;
+    flex-wrap: wrap;
     gap: 1rem;
   }
 }
 .dolsbtn {
-  padding: 0.3rem 0.75rem;
+  padding: 0.4rem 0.75rem;
+  white-space: normal;
   color: var(--col-03);
   text-decoration: none;
   border-radius: 1rem;
@@ -82,29 +90,50 @@
   background: var(--col-03);
 }
 .DonateBase {
+  width: 100%;
+  max-width: 100%;
   margin-bottom: 1.25rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem;
   border-radius: 0.25rem;
   border: 1px solid var(--col-03);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+  overflow-x: auto;
 }
 .nickname {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  flex-wrap: nowrap;
 
   & a {
     color: var(--col-03);
   }
   & img {
-    height: 2.2rem;
-    width: 2.2rem;
+    height: 2.75rem;
+    width: 2.75rem;
+    min-width: 2.75rem;
+    object-fit: cover;
     border-radius: 50%;
   }
 }
 .Messagem {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+
   & a {
     color: var(--col-03);
   }
+}
+.Messagem,
+.Messagem p,
+.Messagem span {
+  overflow-wrap: anywhere;
+  word-break: break-all;
+  hyphens: auto;
+  white-space: normal;
 }
 .line {
   width: 100%;
@@ -116,8 +145,11 @@
 .valor {
   color: var(--col-03);
 }
-video {
+video,
+img {
+  height: auto;
   width: 100%;
+  display: block;
 }
 /* page Alfabeto & textos */
 .alfabetoSpam {
@@ -148,3 +180,53 @@ video {
   font-size: 1.5rem;
   color: var(--col-02);
 }
+
+/* RESPOSIVIDADE */
+@media (max-width: 1024px) {
+  .bg {
+    height: 100%;
+    width: 75%;
+    &::after {
+      width: 75%;
+    }
+  }
+  .Homepage {
+    width: 75%;
+    padding: 0 1.25rem;
+  }
+}
+@media (max-width: 768px) {
+  .bg {
+    height: 100%;
+    width: 100%;
+    &::after {
+      width: 100%;
+    }
+  }
+  .Homepage {
+    width: 100%;
+    padding: 0 1.25rem;
+  }
+  .DonateBase {
+    padding: 0.6rem;
+    overflow: scroll;
+  }
+  .nickname {
+    font-size: 1rem;
+  }
+  .Messagem {
+    font-size: 0.9rem;
+  }
+  .boxlinks {
+    & ul {
+      /* flex-direction: column; */
+      gap: 1.25rem;
+    }
+  }
+}
+/* @media (min-width: 425px) {
+  .homepage {
+    width: 100%;
+  }
+}
+ */
