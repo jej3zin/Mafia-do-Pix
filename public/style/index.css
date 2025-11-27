@@ -8,10 +8,12 @@
 :root {
   --col-01: #222;
   --col-02: #d4d4d4;
-  --col-03: #ff0000;
+  --col-03: #ffa200;
   --col-04: #333;
+  --col-05: #b3b3b3;
 }
 body {
+  color: var(--col-02);
   background: var(--col-01);
 }
 .preloader {
