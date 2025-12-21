@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Máfia do Pix</title>
+    <link rel="icon" href="/public/asset/briefing/" />
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/public/styles/index.css" />
+
+    <!-- Script Loader -->
+    <script type="module" src="/public/js/loader.js"></script>
+
+    <!-- Import Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <div id="preloader">
+      <span class="loader">
+        <img src="/public/asset/briefing/" alt="loading" />
+      </span>
+    </div>
+
+    <div id="content">
+      <header class="head">
+        <div class="head-box-left">
+          <img src="/public/asset/briefing/" alt="logotipo" />
+        </div>
+
+        <div class="head-box-right">
+          <div class="search-box">
+            <label for="searchInput" class="sr-only">Buscar</label>
+            <ion-icon name="search" class="search-icon"></ion-icon>
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Buscar..."
+              autocomplete="off"
+            />
+            <ion-icon name="close-circle" class="clear-icon"></ion-icon>
+          </div>
+
+          <div id="searchResults" class="search-results"></div>
+
+          <button id="avatarBtn" class="avatarBtn">
+            <img src="/public/asset/images/" alt="Avatar" />
+          </button>
+        </div>
+      </header>
+
+      <main class="main"><div id="timeline" class="timeline"></div></main>
+    </div>
+
+    <footer class="foot">
+      <div class="foot-head">
+        <div class="logo">
+          <img src="/public/asset/briefing/" alt="logotipo" />
+        </div>
+
+        <div class="foot-links">
+          <h3>Navegação</h3>
+
+          <a href="/index.html">Home</a>
+          <a href="/pages/alphabet.html">Alfabeto</a>
+          <a href="/pages/numbers.html">Números</a>
+          <a href="/pages/texts.html">Textos</a>
+          <a href="/pages/spam.html">Spans</a>
+        </div>
+
+        <div class="foot-social">
+          <h3>Nossas Redes</h3>
+          <a href="https://github.com/jej3zin"
+            ><ion-icon name="logo-github"></ion-icon
+          ></a>
+        </div>
+      </div>
+
+      <p class="foot-copy">Copyright &copy; 2025-2027</p>
+    </footer>
+  </body>
+</html>
