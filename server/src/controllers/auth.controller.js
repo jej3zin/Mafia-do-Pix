@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
-import { UserModel } from '../models/User.model.js';
-import { hashPassword, comparePassword } from '../utils/hashPassword.js';
+import { UserModel } from '../models/user.model.js';
+import { hashPassword, comparePassword } from '../utils/hashpassword.js';
 import { env } from '../config/env.js';
 import { jwtConfig } from '../config/jwt.js';
 

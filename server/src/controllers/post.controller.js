@@ -1,4 +1,4 @@
-import { PostModel } from '../models/Post.model.js';
+import { PostModel } from '../models/post.model.js';
 
 export const createPost = async (req, res) => {
   const post = await PostModel.create(req.userId, req.body.content);

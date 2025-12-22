@@ -1,7 +1,7 @@
-import { FollowModel } from '../models/Follow.model.js';
-import { LikeModel } from '../models/Like.model.js';
-import { CommentModel } from '../models/Comment.model.js';
-import { ReportModel } from '../models/Report.model.js';
+import { FollowModel } from '../models/follow.model.js';
+import { LikeModel } from '../models/like.model.js';
+import { CommentModel } from '../models/comment.model.js';
+import { ReportModel } from '../models/report.model.js';
 
 export const followUser = async (req, res) => {
   await FollowModel.follow(req.userId, req.params.id);
