@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Máfia do Pix | Textos</title>
+    <title>Máfia do Pix | @username</title>
     <link rel="icon" href="/public/asset/briefing/logo_02.webp" />
 
     <!-- Import CSS -->
@@ -40,7 +40,7 @@
             <a class="nav-links" href="/index.html">Home</a>
             <a class="nav-links" href="/pages/alphabet.html">Alfabeto</a>
             <a class="nav-links" href="/pages/numbers.html">Números</a>
-            <a class="nav-links activeNav" href="/pages/texts.html">Textos</a>
+            <a class="nav-links" href="/pages/texts.html">Textos</a>
             <a class="nav-links" href="/pages/spam.html">Spans</a>
             <a class="nav-links" href="/pages/bro.html">Mano, Porquê...</a>
           </nav>
@@ -62,12 +62,57 @@
           <div id="searchResults" class="search-results"></div>
 
           <button id="avatarBtn" class="avatarBtn">
-            <img src="/public/asset/avatares/Avatar.webp" alt="Avatar" />
+            <img src="/public/asset/avatars/Avatar.webp" alt="Avatar" />
           </button>
         </div>
       </header>
 
-      <main class="main"><div id="timeline" class="timeline"></div></main>
+      <main class="main" id="profileRoot">
+        <!-- Skeleton -->
+        <section class="profile-skeleton" id="profileSkeleton">
+          <div class="s-banner"></div>
+          <div class="s-avatar"></div>
+          <div class="s-lines"></div>
+        </section>
+
+        <!-- PERFIL -->
+        <section class="profile hidden" id="profile">
+          <section class="profile-banner">
+            <img id="profileBanner" alt="" />
+          </section>
+
+          <section class="profile-info">
+            <img id="profileAvatar" class="profile-avatar" alt="" />
+
+            <div class="profile-user">
+              <div class="profile-left">
+                <div class="profile-box-names">
+                  <h1 id="profileName"></h1>
+                  <span id="profileUsername"></span>
+                </div>
+                <p id="profileBio"></p>
+              </div>
+
+              <div class="profile-right">
+                <button id="followBtn">
+                  <ion-icon name="person-add"></ion-icon>Seguir
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="profile-feed">
+            <div class="profile-feed-left">
+              <h2>Feed</h2>
+              <div id="profileFeed"></div>
+            </div>
+
+            <div class="profile-feed-right">
+              <div id="profileFriends"></div>
+            </div>
+          </section>
+        </section>
+      </main>
 
       <footer class="foot">
         <div class="foot-head">
@@ -96,7 +141,6 @@
         <p class="foot-copy">Copyright &copy; 2025-2027</p>
       </footer>
     </div>
-
-    <script type="module" src="/public/js/layout/header.js"></script>
+    <script type="module" src="/public/js/profile.js"></script>
   </body>
 </html>

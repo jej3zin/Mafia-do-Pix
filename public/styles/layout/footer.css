@@ -1,0 +1,42 @@
+.foot {
+  padding: 2rem 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  box-shadow: var(--shadow-01);
+  border-top: var(--border-01);
+  background: var(--bg-01);
+}
+.foot-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  width: 8rem;
+  position-fit: cover;
+}
+.foot-links {
+  padding-left: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-01);
+  border-left: 2px solid var(--brand-01);
+}
+.foot-links a:hover {
+  text-decoration: underline;
+}
+.foot-social {
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--brand-01);
+}
+.foot-icon {
+  font-size: 1.75rem;
+}
+.foot p {
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-03);
+}

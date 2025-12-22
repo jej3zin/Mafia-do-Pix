@@ -8,7 +8,7 @@
   background: var(--bg-01);
   transition: var(--anima-01);
 }
-#preloader .hide {
+#preloader.hide {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -46,8 +46,13 @@
   animation: pulse 1.2s ease-in-out infinite;
 }
 @keyframes pulse {
-  0%, 100% { opacity: .6; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 @keyframes rotation {
@@ -62,6 +67,6 @@
   opacity: 0;
   transition: var(--anima-01);
 }
-#content.show{
-    opacity1
+#content.show {
+  opacity: 1;
 }

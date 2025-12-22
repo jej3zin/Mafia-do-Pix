@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Máfia do Pix</title>
-    <link rel="icon" href="/public/asset/briefing/" />
+    <link rel="icon" href="/public/asset/briefing/logo_02.webp" />
 
     <!-- Import CSS -->
     <link rel="stylesheet" href="/public/styles/index.css" />
@@ -25,14 +25,25 @@
   <body>
     <div id="preloader">
       <span class="loader">
-        <img src="/public/asset/briefing/" alt="loading" />
+        <img src="/public/asset/briefing/logo_02.webp" alt="loading" />
       </span>
     </div>
 
     <div id="content">
       <header class="head">
         <div class="head-box-left">
-          <img src="/public/asset/briefing/" alt="logotipo" />
+          <a href="/index.html">
+            <img src="/public/asset/briefing/logo_02.webp" alt="logotipo" />
+          </a>
+
+          <nav class="head-nav">
+            <a class="nav-links activeNav" href="/index.html">Home</a>
+            <a class="nav-links" href="/pages/alphabet.html">Alfabeto</a>
+            <a class="nav-links" href="/pages/numbers.html">Números</a>
+            <a class="nav-links" href="/pages/texts.html">Textos</a>
+            <a class="nav-links" href="/pages/spam.html">Spans</a>
+            <a class="nav-links" href="/pages/bro.html">Mano, Porquê...</a>
+          </nav>
         </div>
 
         <div class="head-box-right">
@@ -51,39 +62,40 @@
           <div id="searchResults" class="search-results"></div>
 
           <button id="avatarBtn" class="avatarBtn">
-            <img src="/public/asset/images/" alt="Avatar" />
+            <img src="/public/asset/avatares/Avatar.webp" alt="Avatar" />
           </button>
         </div>
       </header>
 
       <main class="main"><div id="timeline" class="timeline"></div></main>
+
+      <footer class="foot">
+        <div class="foot-head">
+          <div class="logo">
+            <img src="/public/asset/briefing/logotipo-01.webp" alt="logotipo" />
+          </div>
+
+          <div class="foot-links">
+            <h3>Navegação</h3>
+
+            <a href="/index.html">Home</a>
+            <a href="/pages/alphabet.html">Alfabeto</a>
+            <a href="/pages/numbers.html">Números</a>
+            <a href="/pages/texts.html">Textos</a>
+            <a href="/pages/spam.html">Spans</a>
+          </div>
+
+          <div class="foot-social">
+            <h3>Nossas Redes</h3>
+            <a href="https://github.com/jej3zin"
+              ><ion-icon class="foot-icon" name="logo-github"></ion-icon
+            ></a>
+          </div>
+        </div>
+
+        <p class="foot-copy">Copyright &copy; 2025-2027</p>
+      </footer>
     </div>
-
-    <footer class="foot">
-      <div class="foot-head">
-        <div class="logo">
-          <img src="/public/asset/briefing/" alt="logotipo" />
-        </div>
-
-        <div class="foot-links">
-          <h3>Navegação</h3>
-
-          <a href="/index.html">Home</a>
-          <a href="/pages/alphabet.html">Alfabeto</a>
-          <a href="/pages/numbers.html">Números</a>
-          <a href="/pages/texts.html">Textos</a>
-          <a href="/pages/spam.html">Spans</a>
-        </div>
-
-        <div class="foot-social">
-          <h3>Nossas Redes</h3>
-          <a href="https://github.com/jej3zin"
-            ><ion-icon name="logo-github"></ion-icon
-          ></a>
-        </div>
-      </div>
-
-      <p class="foot-copy">Copyright &copy; 2025-2027</p>
-    </footer>
+    <script type="module" src="/public/js/layout/header.js"></script>
   </body>
 </html>

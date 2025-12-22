@@ -1,0 +1,74 @@
+#profileRoot {
+  padding: 9vh 8rem;
+}
+
+/* =========== Profile ========== */
+.profile {
+}
+.profile-banner {
+  height: 12rem;
+}
+.profile-banner img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-03);
+}
+
+.profile-info {
+  position: relative;
+  border-bottom: var(--border-01-2);
+}
+
+.profile-left {
+  width: 85%;
+}
+.profile-avatar {
+  height: 5rem;
+  width: 5rem;
+  object-fit: cover;
+  position: absolute;
+  top: -2.5rem;
+  left: 2.5rem;
+  border-radius: var(--radius-03);
+  border: 5px solid var(--bg-01);
+}
+.profile-user {
+  width: 89%;
+  margin-left: auto;
+  padding: 0.75rem;
+  display: flex;
+}
+.profile-box-names {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-03);
+}
+#profileUsername {
+  color: var(--text-03);
+}
+#profileBio {
+  width: 100%;
+}
+
+.profile-right {
+  width: 15%;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+#followBtn {
+  margin-left: auto;
+  padding: 0.25rem 0.5rem;
+  color: var(--text-01);
+  display: flex;
+  align-items: center;
+  gap: var(--gap-02);
+  border: 1px solid var(--brand-01);
+  border-radius: var(--radius-01);
+}
+#followBtn:hover {
+  color: var(--bg-01);
+  background: var(--brand-01);
+  box-shadow: var(--shadow-brand-01);
+}
