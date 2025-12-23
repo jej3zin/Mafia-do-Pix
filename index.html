@@ -69,7 +69,7 @@
           <div id="headDropdown" class="head-dropdown">
             <p>Olá, <span id="hiUser"></span></p>
             <button class="deadDrop-links" id="viewsBtn"><ion-icon name="person"></ion-icon>Perfil</button>
-            <button class="deadDrop-links"><ion-icon name="log-in"></ion-icon>Login</button>
+            <button class="deadDrop-links" id="loginBtn"><ion-icon name="log-in"></ion-icon>Login</button>
           </div>
         </div>
       </header>
@@ -115,49 +115,56 @@
         <p class="foot-copy">Copyright &copy; 2025-2027</p>
       </footer>
 
-      <div class="auth-container">
+      <div id="authModal" class="auth-modal">
+  <div class="auth-container">
 
-           <!-- IMAGE SIDE -->
-           <div class="auth-image">
-             <img src="/public/asset/briefing/bg.png" alt="Máfia do Pix" />
-           </div>
+    <button class="auth-close" id="closeAuth">
+      <ion-icon name="close"></ion-icon>
+    </button>
 
-           <!-- FORM SIDE -->
-           <div class="auth-content">
+    <!-- IMAGE SIDE -->
+    <div class="auth-image">
+      <img src="/public/asset/briefing/bg.png" alt="Máfia do Pix" />
+    </div>
 
-             <!-- LOGIN -->
-             <form id="loginForm" class="auth-form active">
-      <h2>Entrar</h2>
+    <!-- FORM SIDE -->
+    <div class="auth-content">
 
-      <input type="text" name="username" placeholder="Usuário" required />
-      <input type="password" name="password" placeholder="Senha" required />
+      <!-- LOGIN -->
+      <form id="loginForm" class="auth-form active">
+        <h2>Entrar</h2>
 
-      <button type="submit">Entrar</button>
+        <input type="text" name="username" placeholder="Usuário" required />
+        <input type="password" name="password" placeholder="Senha" required />
 
-      <p>
-        Não tem conta?
-        <span class="switch" data-target="register">Criar agora</span>
-      </p>
-             </form>
+        <button type="submit">Entrar</button>
 
-             <!-- REGISTER -->
-             <form id="registerForm" class="auth-form">
-      <h2>Criar conta</h2>
+        <p>
+          Não tem conta?
+          <span class="switch" data-target="register">Criar agora</span>
+        </p>
+      </form>
 
-      <input type="text" name="name" placeholder="Nome" required />
-      <input type="text" name="username" placeholder="Usuário" required />
-      <input type="password" name="password" placeholder="Senha" required />
+      <!-- REGISTER -->
+      <form id="registerForm" class="auth-form">
+        <h2>Criar conta</h2>
 
-      <button type="submit">Registrar</button>
+        <input type="text" name="name" placeholder="Nome" required />
+        <input type="text" name="username" placeholder="Usuário" required />
+        <input type="password" name="password" placeholder="Senha" required />
 
-      <p>
-        Já tem conta?
-        <span class="switch" data-target="login">Entrar</span>
-      </p>
-             </form>
+        <button type="submit">Registrar</button>
 
-           </div>
+        <p>
+          Já tem conta?
+          <span class="switch" data-target="login">Entrar</span>
+        </p>
+      </form>
+
+    </div>
+  </div>
       </div>
+
      </div>
     <script type="module" src="/public/js/layout/header.js"></script>
   </body>

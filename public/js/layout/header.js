@@ -33,4 +33,37 @@ document.addEventListener('DOMContentLoaded', () => {
       headDropdown.classList.remove('showDropdown');
     }
   });
+
+  /* ---------- AUTH MODAL ---------- */
+  const loginBtn = document.getElementById('loginBtn');
+  const authModal = document.getElementById('authModal');
+  const closeAuth = document.getElementById('closeAuth');
+
+  if (loginBtn && authModal) {
+    loginBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // evita fechar dropdown + modal
+      authModal.classList.add('show');
+      document.getElementById('headDropdown')?.classList.remove('showDropdown');
+    });
+  }
+
+  if (closeAuth) {
+    closeAuth.addEventListener('click', () => {
+      authModal.classList.remove('show');
+    });
+  }
+
+  // Fecha com ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      authModal.classList.remove('show');
+    }
+  });
+
+  // Fecha clicando fora
+  authModal?.addEventListener('click', (e) => {
+    if (e.target === authModal) {
+      authModal.classList.remove('show');
+    }
+  });
 });
