@@ -1,3 +1,35 @@
 .main {
   padding-top: var(--header-height);
 }
+.main-banner {
+  width: 100%;
+  margin-bottom: var(--gap-04);
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: var(--radius-02);
+  box-shadow: var(--shadow-banner);
+
+  & h1 {
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  & img {
+    height: 200px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: local;
+    background-size: cover;
+    border-radius: var(--radius-02);
+  }
+  & .subtitle {
+    align-items: center;
+    position: absolute;
+    bottom: 3.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
