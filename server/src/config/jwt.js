@@ -1,3 +1,5 @@
+// server/src/config/jwt.js
 export const jwtConfig = {
-  expiresIn: '1h',
+  access: { expiresIn: '15m' },
+  refresh: { expiresIn: '7d' },
 };

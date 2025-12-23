@@ -1,3 +1,4 @@
+// server/src/controllers/post.controller.js
 import { PostModel } from '../models/post.model.js';
 
 export const createPost = async (req, res) => {

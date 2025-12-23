@@ -79,6 +79,9 @@
   --shadow-brand-01: 0 0 14px 3px rgba(254, 220, 0, 0.5);
   --shadow-danger: 0 0 12px 3px rgba(179, 58, 54, 0.18);
 
+  --shadow-banner: 0 4px 0px rgba(255, 179, 0, 0.8);
+  --shadow-btns: 0 0px 10px rgba(255, 179, 0, 0.8);
+
   /* ===== BLUR / DESFOCO ===== */
   --blur-1: blur(2px);
   --blur-2: blur(4px);

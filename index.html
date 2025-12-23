@@ -61,9 +61,16 @@
 
           <div id="searchResults" class="search-results"></div>
 
-          <button id="avatarBtn" class="avatarBtn">
+          <button id="openHeadDrop" class="avatarBtn">
             <img src="/public/asset/briefing/Avatar.webp" alt="Avatar" />
           </button>
+
+          <div class="headDropdown">
+          <div id="headDropdown" class="head-dropdown">
+            <p>Olá, <span id="hiUser"></span></p>
+            <button class="deadDrop-links" id="viewsBtn">Perfil</button>
+            <button class="deadDrop-links">Login</button>
+          </div>
         </div>
       </header>
 
@@ -75,6 +82,8 @@
           </p>
           <img src="/public/asset/briefing/banner-02.webp" alt="banner" />
         </div>
+
+        <section class="siga-me"></section>
 
         <div id="timeline" class="timeline"></div>
       </main>
@@ -105,7 +114,51 @@
 
         <p class="foot-copy">Copyright &copy; 2025-2027</p>
       </footer>
-    </div>
+
+      <div class="auth-container">
+
+           <!-- IMAGE SIDE -->
+           <div class="auth-image">
+             <img src="/assets/auth-side.jpg" alt="Máfia do Pix" />
+           </div>
+
+           <!-- FORM SIDE -->
+           <div class="auth-content">
+
+             <!-- LOGIN -->
+             <form id="loginForm" class="auth-form active">
+      <h2>Entrar</h2>
+
+      <input type="text" name="username" placeholder="Usuário" required />
+      <input type="password" name="password" placeholder="Senha" required />
+
+      <button type="submit">Entrar</button>
+
+      <p>
+        Não tem conta?
+        <span class="switch" data-target="register">Criar agora</span>
+      </p>
+             </form>
+
+             <!-- REGISTER -->
+             <form id="registerForm" class="auth-form">
+      <h2>Criar conta</h2>
+
+      <input type="text" name="name" placeholder="Nome" required />
+      <input type="text" name="username" placeholder="Usuário" required />
+      <input type="password" name="password" placeholder="Senha" required />
+
+      <button type="submit">Registrar</button>
+
+      <p>
+        Já tem conta?
+        <span class="switch" data-target="login">Entrar</span>
+      </p>
+             </form>
+
+           </div>
+      </div>
+     </div>
     <script type="module" src="/public/js/layout/header.js"></script>
   </body>
 </html>

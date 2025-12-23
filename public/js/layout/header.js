@@ -1,11 +1,24 @@
 // layout/header.js
+/* 4-01 Open Profile via @username */
 document.addEventListener('DOMContentLoaded', () => {
-  const avatarBtn = document.getElementById('avatarBtn');
+  const viewsBtn = document.getElementById('viewsBtn');
 
-  if (!avatarBtn) return;
+  if (!viewsBtn) return;
 
-  avatarBtn.addEventListener('click', () => {
+  viewsBtn.addEventListener('click', () => {
     const username = 'urubusfera';
     window.location.href = `/@${username}`;
+  });
+});
+
+/* 4-02 Open HeadDrop */
+document.addEventListener('DOMContentLoaded', () => {
+  const openHeadDrop = document.getElementById('openHeadDrop');
+  const headDropdown = document.getElementById('headDropdown');
+
+  if (!openHeadDrop || !headDropdown) return;
+
+  openHeadDrop.addEventListener('click', () => {
+    headDropdown.classList.toggle('showDropdown');
   });
 });

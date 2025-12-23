@@ -10,7 +10,10 @@ export const auth = (req, res, next) => {
     const decoded = jwt.verify(token, env.JWT_SECRET);
     req.userId = decoded.id;
     next();
-  } catch {
-    res.sendStatus(401);
+  } catch (err) {
+    if (err.name === 'TokenExpiredError') {
+      return res.status(401).json({ error: 'Token expirado' });
+    }
+    return res.sendStatus(401);
   }
 };

@@ -1,3 +1,4 @@
+// server/src/controllers/interaction.controller.js
 import { FollowModel } from '../models/follow.model.js';
 import { LikeModel } from '../models/like.model.js';
 import { CommentModel } from '../models/comment.model.js';
