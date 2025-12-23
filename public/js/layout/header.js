@@ -66,4 +66,25 @@ document.addEventListener('DOMContentLoaded', () => {
       authModal.classList.remove('show');
     }
   });
+
+  /* ---------- SWITCH LOGIN / REGISTER ---------- */
+  const switches = document.querySelectorAll('.switch');
+  const loginForm = document.getElementById('loginForm');
+  const registerForm = document.getElementById('registerForm');
+
+  switches.forEach((sw) => {
+    sw.addEventListener('click', () => {
+      const target = sw.dataset.target;
+
+      if (target === 'register') {
+        loginForm.classList.remove('active');
+        registerForm.classList.add('active');
+      }
+
+      if (target === 'login') {
+        registerForm.classList.remove('active');
+        loginForm.classList.add('active');
+      }
+    });
+  });
 });
