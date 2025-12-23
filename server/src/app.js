@@ -13,6 +13,8 @@ import { limiter } from './middleware/rateLimit.middleware.js';
 
 const app = express();
 
+/* app.use(express.static('public')); */
+
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
