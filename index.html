@@ -114,6 +114,7 @@
 
         <p class="foot-copy">Copyright &copy; 2025-2027</p>
       </footer>
+     </div>
 
       <div id="authModal" class="auth-modal">
        <div class="auth-container">
@@ -131,7 +132,7 @@
        <div class="auth-content">
 
          <!-- LOGIN -->
-        <form id="loginForm" class="auth-form active">
+        <form id="loginForm" method="post" class="auth-form active">
         <h2>Entrar</h2>
 
         <input type="text" name="username" placeholder="Usuário" required />
@@ -146,10 +147,10 @@
         </form>
 
         <!-- REGISTER -->
-        <form id="registerForm" class="auth-form">
+        <form id="registerForm" method="post" class="auth-form">
           <h2>Criar conta</h2>
   
-        <input type="text" name="name" placeholder="Nome" required />
+          <input type="text" name="name" placeholder="Nome" required />
           <input type="text" name="username" placeholder="Usuário" required />
           <input type="password" name="password" placeholder="Senha" required />
 
@@ -165,7 +166,8 @@
        </div>
       </div>
 
-     </div>
+     <div id="toast-root"></div>
+
     <script type="module" src="/public/js/layout/header.js"></script>
   </body>
 </html>

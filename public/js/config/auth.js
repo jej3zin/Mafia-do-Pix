@@ -1,5 +1,6 @@
 // public/js/config/auth.js
 // js/auth.js
+import { toast } from '../components/toast.js';
 import { API_URL } from './api.js';
 
 const loginForm = document.querySelector('#loginForm');
@@ -33,7 +34,8 @@ loginForm.onsubmit = async (e) => {
     body: JSON.stringify(data),
   });
 
-  if (!res.ok) return alert('Credenciais inválidas');
+  if (!res.ok) return toast('Credenciais inválidas', 'error');
+  toast('Login realizado com sucesso!', 'success');
 
   const json = await res.json();
 
@@ -42,6 +44,24 @@ loginForm.onsubmit = async (e) => {
 
   location.reload(); // user logado na hora
 };
+loginForm.addEventListener('submit', async (e) => {
+  e.preventDefault(); // 🔥 ESSENCIAL
+
+  const data = Object.fromEntries(new FormData(loginForm));
+
+  const res = await fetch(`${API_URL}/auth/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+
+  if (!res.ok) return toast('Erro no login', 'error');
+
+  const json = await res.json();
+  localStorage.setItem('token', json.accessToken);
+  localStorage.setItem('user', JSON.stringify(json.user));
+  location.reload();
+});
 
 /* REGISTER */
 registerForm.onsubmit = async (e) => {
@@ -55,7 +75,8 @@ registerForm.onsubmit = async (e) => {
     body: JSON.stringify(data),
   });
 
-  if (!res.ok) return alert('Erro ao criar conta');
+  if (!res.ok) return toast('Erro ao criar conta', 'error');
+  toast('Conta criada com sucesso!', 'success');
 
   // auto-login depois de registrar
   await fetch(`${API_URL}/auth/login`, {
@@ -73,3 +94,21 @@ registerForm.onsubmit = async (e) => {
       location.reload();
     });
 };
+registerForm.addEventListener('submit', async (e) => {
+  e.preventDefault(); // 🔥 ESSENCIAL
+
+  const data = Object.fromEntries(new FormData(registerForm));
+
+  const res = await fetch(`${API_URL}/auth/register`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+
+  if (!res.ok) return toast('Erro ao registrar', 'error');
+
+  const json = await res.json();
+  localStorage.setItem('token', json.accessToken);
+  localStorage.setItem('user', JSON.stringify(json.user));
+  location.reload();
+});

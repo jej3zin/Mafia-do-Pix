@@ -17,6 +17,8 @@
 /* ========== COMPONENTES ========== */
 @import url('./components/loader.css');
 @import url('./components/auth.css');
+@import url('./components/toast.css');
+
 /* ========== MODALS  ========== */
 
 /* ========== PÁGINAS (escopo local, SEM sobrescrever globais) ========== */
