@@ -1,41 +1,35 @@
-// layout/header.js
-/* 4-01 Open Profile via @username */
 document.addEventListener('DOMContentLoaded', () => {
+  /* ---------- PROFILE ---------- */
   const viewsBtn = document.getElementById('viewsBtn');
+  if (viewsBtn) {
+    viewsBtn.addEventListener('click', () => {
+      const username = 'urubusfera';
+      window.location.href = `/@${username}`;
+    });
+  }
 
-  if (!viewsBtn) return;
-
-  viewsBtn.addEventListener('click', () => {
-    const username = 'urubusfera';
-    window.location.href = `/@${username}`;
-  });
-});
-
-/* 4-02 Open HeadDrop */
-document.addEventListener('DOMContentLoaded', () => {
+  /* ---------- DROPDOWN ---------- */
   const openHeadDrop = document.getElementById('openHeadDrop');
   const headDropdown = document.getElementById('headDropdown');
 
   if (!openHeadDrop || !headDropdown) return;
-  /* Open */
-  openHeadDrop.addEventListener('click', () => {
+
+  // ABRIR / FECHAR
+  openHeadDrop.addEventListener('click', (e) => {
+    e.stopPropagation(); // 🔥 ISSO AQUI SALVA VIDAS
     headDropdown.classList.toggle('showDropdown');
   });
-  /* Close */
-  document.addEventListener('click', (event) => {
-    if (!headDropdown.contains(event.target)) {
+
+  // CLIQUE FORA
+  document.addEventListener('click', (e) => {
+    if (!headDropdown.contains(e.target)) {
       headDropdown.classList.remove('showDropdown');
     }
   });
-  /* Close with click outside */
-  document.addEventListener('click', (event) => {
-    if (!headDropdown.contains(event.target)) {
-      headDropdown.classList.remove('showDropdown');
-    }
-  });
-  /* Close with ESC */
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
+
+  // ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
       headDropdown.classList.remove('showDropdown');
     }
   });
