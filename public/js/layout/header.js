@@ -17,8 +17,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const headDropdown = document.getElementById('headDropdown');
 
   if (!openHeadDrop || !headDropdown) return;
-
+  /* Open */
   openHeadDrop.addEventListener('click', () => {
     headDropdown.classList.toggle('showDropdown');
+  });
+  /* Close */
+  document.addEventListener('click', (event) => {
+    if (!headDropdown.contains(event.target)) {
+      headDropdown.classList.remove('showDropdown');
+    }
+  });
+  /* Close with click outside */
+  document.addEventListener('click', (event) => {
+    if (!headDropdown.contains(event.target)) {
+      headDropdown.classList.remove('showDropdown');
+    }
+  });
+  /* Close with ESC */
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      headDropdown.classList.remove('showDropdown');
+    }
   });
 });
