@@ -152,6 +152,79 @@ input[type='search'] {
 input[type='search'] {
   -webkit-appearance: none;
 }
+/* estilizando o highlight do termo buscado */
+.search-results mark {
+  background-color: var(--brand-01);
+  color: var(--bg-01);
+  font-weight: bold;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+/* ================= SEARCH RESULTS ================= */
+.search-results {
+  position: absolute;
+  top: 100%; /* logo abaixo da search-box */
+  left: 0;
+  width: 100%; /* pega o mesmo width da search-box */
+  max-height: 300px; /* altura máxima com scroll */
+  overflow-y: auto;
+  background: var(--bg-01);
+  border: var(--border-01);
+  border-radius: var(--radius-02);
+  box-shadow: var(--shadow-03);
+  padding: var(--space-2) 0;
+  margin-top: 4px; /* espaçamento da search-box */
+  display: none; /* só aparece quando a classe .show for adicionada */
+  z-index: 50;
+}
+
+/* mostra resultados quando tem a classe show */
+.search-results.show {
+  display: block;
+}
+
+/* cada item da busca */
+.search-item {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-01);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-01);
+  cursor: pointer;
+  transition: var(--anima-01);
+}
+
+.search-item:hover {
+  background: var(--bg-05);
+}
+
+.search-item strong {
+  font-weight: 600;
+}
+
+.search-item span {
+  font-size: 0.8rem;
+  color: var(--text-03);
+}
+
+/* scrollbar customizada */
+.search-results::-webkit-scrollbar {
+  width: 6px;
+}
+.search-results::-webkit-scrollbar-thumb {
+  background-color: var(--brand-01);
+  border-radius: 3px;
+}
+.search-results::-webkit-scrollbar-track {
+  background: var(--bg-05);
+}
 
 /* ======== AVATAR ======== */
 .avatarBtn {
