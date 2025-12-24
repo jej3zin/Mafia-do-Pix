@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ================= LOGIN ================= */
   loginForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    console.log('SUBMIT OK');
 
     const data = Object.fromEntries(new FormData(loginForm));
 
@@ -56,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ================= REGISTER ================= */
   registerForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    console.log('SUBMIT OK');
 
     const data = Object.fromEntries(new FormData(registerForm));
 
