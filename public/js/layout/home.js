@@ -2,6 +2,8 @@
 import { API_URL } from './config/api.js';
 import { escapeHTML, formatDate, isValidUsername } from './utils/index.js';
 
+document.addEventListener('DOMContentLoaded', initProfile);
+
 async function initProfile() {
   const username = getUsernameFromURL();
 
@@ -156,4 +158,12 @@ function renderNotFound(message = 'Página não encontrada') {
 
   root.classList.remove('hidden');
 }
-document.addEventListener('DOMContentLoaded', initProfile);
+const path = location.pathname;
+
+if (path.startsWith('/@')) {
+  initProfile();
+} else if (path === '/' || path === '/feed') {
+  renderHome();
+} else {
+  renderNotFound('Página não encontrada');
+}
