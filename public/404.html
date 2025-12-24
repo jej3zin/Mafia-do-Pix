@@ -3,9 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Máfia do Pix</title>
+    <link rel="icon" href="/asset/briefing/logo_02.webp" />
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/styles/index.css" />
+
+    <!-- Script Loader -->
+    <script type="module" src="/js/loader.js"></script>
+    <script type="module" src="/js/components/toast.js"></script>
+
+    <!-- Import Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </head>
   <body>
-    <h1>Teste</h1>
+    <div id="preloader">
+      <span class="loader">
+        <img src="/asset/briefing/logo_02.webp" alt="loading" />
+      </span>
+    </div>
+
+    <div id="content"></div>
+
+    <div id="toast-root"></div>
+    <div id="errorPage" class="hidden"></div>
+
+    <script type="module" src="/js/layout/home.js"></script>
+    <script type="module" src="/js/profile.js"></script>
+    <script type="module" src="/js/layout/header.js"></script>
+    <script type="module" src="/js/components/search.js"></script>
+    <script type="module" src="/js/config/auth.js"></script>
   </body>
 </html>
