@@ -15,7 +15,13 @@ const app = express();
 
 app.use(express.static('public'));
 
-app.use(cors());
+// Configura CORS
+app.use(
+  cors({
+    origin: 'https://mafiadopix.netlify.app', // seu front
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  })
+);
 app.use(helmet());
 app.use(express.json());
 
