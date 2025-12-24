@@ -1,3 +1,4 @@
+// public/js/config/auth.js
 import { toast } from '../components/toast.js';
 import { API_URL } from './api.js';
 

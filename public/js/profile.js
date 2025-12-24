@@ -1,5 +1,5 @@
-import { API_URL } from './config.js';
-import { escapeHTML, formatDate, isValidUsername } from './utils.js';
+import { API_URL } from './config/api.js';
+import { escapeHTML, formatDate, isValidUsername } from './utils/index.js';
 
 document.addEventListener('DOMContentLoaded', initProfile);
 

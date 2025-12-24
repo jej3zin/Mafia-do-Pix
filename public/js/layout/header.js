@@ -1,3 +1,4 @@
+// public/js/layout/header.js
 import { getSession } from '../config/session.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
