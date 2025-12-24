@@ -1,56 +1,26 @@
 // public/js/profile.js
 import { API_URL } from './config/api.js';
-import { escapeHTML, formatDate, isValidUsername } from './utils/index.js';
+import { escapeHTML, formatDate } from './utils/index.js';
 
-async function initProfile() {
-  const username = getUsernameFromURL();
+export async function initProfile(username) {
+  const res = await fetch(`${API_URL}/users/username/${username}`);
 
-  if (!username) {
-    renderNotFound('URL inválida');
-    return;
+  if (res.status === 404) {
+    throw new Error('USER_NOT_FOUND');
   }
 
-  try {
-    const res = await fetch(`${API_URL}/users/username/${username}`);
-
-    if (res.status === 404) {
-      renderNotFound('Usuário não encontrado');
-      return;
-    }
-
-    if (!res.ok) {
-      throw new Error('Erro inesperado');
-    }
-
-    const user = await res.json();
-
-    renderProfile(user);
-    renderFeed(user.posts || []);
-  } catch (err) {
-    console.error(err);
-    renderNotFound('Erro ao carregar perfil');
+  if (!res.ok) {
+    throw new Error('PROFILE_ERROR');
   }
+
+  const user = await res.json();
+
+  renderProfile(user);
+  renderFeed(user.posts || []);
+  renderFriends?.(user); // se usar
 }
 
-/* =======================
-   URL RESOLVER
-======================= */
-function getUsernameFromURL() {
-  const path = location.pathname;
-
-  if (!path.startsWith('/@')) return null;
-
-  const username = path.slice(2); // remove "/@"
-  if (!username || !isValidUsername(username)) {
-    return null;
-  }
-
-  return username;
-}
-
-/* =======================
-   RENDER PROFILE
-======================= */
+/* ========= RENDER PROFILE ======== */
 function renderProfile(user) {
   document.title = `${user.name} (@${user.username})`;
 
@@ -81,44 +51,32 @@ function renderFeed(posts) {
   feed.innerHTML = posts
     .map(
       (p) => `
-      <article class="feed-post">
-        <p>${escapeHTML(p.content)}</p>
-        <div class="feed-meta">
-          <span>${formatDate(p.created_at)}</span>
-          <span>❤️ ${p.likes_count ?? 0}</span>
-          <span>💬 ${p.comments_count ?? 0}</span>
-        </div>
-      </article>
-    `
+    <article class="feed-post">
+      <p>${escapeHTML(p.content)}</p>
+      <div class="feed-meta">
+        <span>${formatDate(p.created_at)}</span>
+        <span>❤️ ${p.likes_count ?? 0}</span>
+        <span>💬 ${p.comments_count ?? 0}</span>
+      </div>
+    </article>
+  `
     )
     .join('');
 }
 
-/* =======================
-   FRIENDS
-======================= */
-function renderFriends(user, allUsers) {
+/* ========= FRIENDS ======== */
+function renderFriends(user) {
   const container = document.getElementById('profileFriends');
-  if (!container) return;
+  if (!container || !user.friends?.length) return;
 
-  if (!user.friends?.length) {
-    container.innerHTML = '<p class="empty">Sem amigos ainda 😶</p>';
-    return;
-  }
-
-  const friends = allUsers.filter((u) => user.friends.includes(u.username));
-
-  container.innerHTML = friends
+  container.innerHTML = user.friends
     .map(
       (f) => `
-      <button class="friend-card" data-user="${f.username}">
-        <img src="${f.avatar}" alt="${f.name}" />
-        <div>
-          <strong>${escapeHTML(f.name)}</strong>
-          <span>@${f.username}</span>
-        </div>
-      </button>
-    `
+    <button class="friend-card" data-user="${f.username}">
+      <strong>${escapeHTML(f.name)}</strong>
+      <span>@${f.username}</span>
+    </button>
+  `
     )
     .join('');
 
@@ -127,33 +85,8 @@ function renderFriends(user, allUsers) {
 
 function bindFriendClicks(container) {
   container.querySelectorAll('.friend-card').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const username = btn.dataset.user;
-      window.location.href = `/@${username}`;
-    });
+    btn.onclick = () => {
+      location.href = `/@${btn.dataset.user}`;
+    };
   });
 }
-
-/* =======================
-   NOT FOUND
-======================= */
-function renderNotFound(message = 'Página não encontrada') {
-  const root = document.getElementById('errorPage') || document.body;
-
-  document.title = '404 · Mafia do Pix';
-
-  root.innerHTML = `
-    <section class="error-page">
-      <h1>404</h1>
-      <p>${escapeHTML(message)}</p>
-
-      <div class="error-actions">
-        <a href="/" class="btn">Voltar ao início</a>
-        <a href="/profile" class="btn secondary">Meu perfil</a>
-      </div>
-    </section>
-  `;
-
-  root.classList.remove('hidden');
-}
-document.addEventListener('DOMContentLoaded', initProfile);
