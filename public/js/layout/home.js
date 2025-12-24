@@ -136,13 +136,11 @@ function bindFriendClicks(container) {
   });
 }
 
-/* =======================
-   NOT FOUND
-======================= */
+/* ====================== NOT FOUND ====================== */
 function renderNotFound(message = 'Página não encontrada') {
-  const root = document.getElementById('errorPage') || document.body;
+  const root = document.getElementById('errorPage');
 
-  document.title = '404 · Mafia do Pix';
+  document.title = '404 · Máfia do Pix';
 
   root.innerHTML = `
     <section class="error-page">
@@ -151,7 +149,6 @@ function renderNotFound(message = 'Página não encontrada') {
 
       <div class="error-actions">
         <a href="/" class="btn">Voltar ao início</a>
-        <a href="/profile" class="btn secondary">Meu perfil</a>
       </div>
     </section>
   `;
@@ -160,10 +157,22 @@ function renderNotFound(message = 'Página não encontrada') {
 }
 const path = location.pathname;
 
-if (path.startsWith('/@')) {
-  initProfile();
-} else if (path === '/' || path === '/feed') {
+// remove barra final
+const cleanPath = path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
+
+// ================= ROTAS =================
+if (cleanPath === '/' || cleanPath === '/feed') {
   renderHome();
+} else if (cleanPath.startsWith('/@')) {
+  /* ===== PERFIL /@username ===== */
+  const username = cleanPath.slice(2);
+
+  if (!isValidUsername(username)) {
+    renderNotFound('Usuário inválido');
+  } else {
+    initProfile(username);
+  }
 } else {
+  /* ===== FALLBACK ===== */
   renderNotFound('Página não encontrada');
 }
