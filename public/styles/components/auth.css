@@ -16,6 +16,7 @@
 .auth-modal.show {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
 }
 
 /* ================= AUTH CONTAINER ================= */
