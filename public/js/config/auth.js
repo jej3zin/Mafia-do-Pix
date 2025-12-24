@@ -41,17 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
   loginForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const payload = {
-      email: email.value,
-      password: password.value,
-    };
-
-    const res = await fetch(`${API_URL}/auth/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
-
     const data = Object.fromEntries(new FormData(loginForm));
 
     try {
@@ -60,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       toast('Login realizado com sucesso!', 'success');
       location.reload();
     } catch {
-      toast('Credenciais inválidas', 'error');
+      toast('Usuário ou senha inválidos', 'error');
     }
   });
 
@@ -68,22 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
   registerForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const payload = {
-      email: email.value,
-      password: password.value,
-    };
-
-    const res = await fetch(`${API_URL}/auth/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
-
     const data = Object.fromEntries(new FormData(registerForm));
 
     try {
       await request('/auth/register', data);
-      toast('Conta criada com sucesso!', 'success');
 
       const json = await request('/auth/login', {
         username: data.username,
@@ -91,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       saveSession(json);
+      toast('Conta criada com sucesso!', 'success');
       location.reload();
     } catch {
       toast('Erro ao criar conta', 'error');
