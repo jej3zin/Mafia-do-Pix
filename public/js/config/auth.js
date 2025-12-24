@@ -5,20 +5,37 @@ import { API_URL } from './api.js';
 document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.querySelector('#loginForm');
   const registerForm = document.querySelector('#registerForm');
-  const switches = document.querySelectorAll('.switch');
+
+  /* ================= UTIL ================= */
+  const request = async (url, data) => {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+
+    if (!res.ok) throw res;
+    return res.json();
+  };
+
+  const saveSession = (json) => {
+    localStorage.setItem('token', json.accessToken);
+    localStorage.setItem('user', JSON.stringify(json.user));
+  };
 
   /* ================= SWITCH LOGIN / REGISTER ================= */
-  switches.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      document
-        .querySelectorAll('.auth-form')
-        .forEach((f) => f.classList.remove('active'));
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.switch');
+    if (!btn) return;
 
-      const target =
-        btn.dataset.target === 'login' ? '#loginForm' : '#registerForm';
+    document
+      .querySelectorAll('.auth-form')
+      .forEach((f) => f.classList.remove('active'));
 
-      document.querySelector(target).classList.add('active');
-    });
+    const target =
+      btn.dataset.target === 'login' ? '#loginForm' : '#registerForm';
+
+    document.querySelector(target)?.classList.add('active');
   });
 
   /* ================= LOGIN ================= */
@@ -29,26 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = Object.fromEntries(new FormData(loginForm));
 
       try {
-        const res = await fetch(`${API_URL}/auth/login`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
-        });
-
-        if (!res.ok) {
-          toast('Credenciais inválidas', 'error');
-          return;
-        }
-
-        const json = await res.json();
-
-        localStorage.setItem('token', json.accessToken);
-        localStorage.setItem('user', JSON.stringify(json.user));
-
+        const json = await request(`${API_URL}/auth/login`, data);
+        saveSession(json);
         toast('Login realizado com sucesso!', 'success');
         location.reload();
-      } catch (err) {
-        toast('Erro de conexão com o servidor', 'error');
+      } catch {
+        toast('Credenciais inválidas', 'error');
       }
     });
   }
@@ -61,37 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = Object.fromEntries(new FormData(registerForm));
 
       try {
-        const res = await fetch(`${API_URL}/auth/register`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
-        });
-
-        if (!res.ok) {
-          toast('Erro ao criar conta', 'error');
-          return;
-        }
-
+        await request(`${API_URL}/auth/register`, data);
         toast('Conta criada com sucesso!', 'success');
 
         // auto-login
-        const loginRes = await fetch(`${API_URL}/auth/login`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            username: data.username,
-            password: data.password,
-          }),
+        const json = await request(`${API_URL}/auth/login`, {
+          username: data.username,
+          password: data.password,
         });
 
-        const json = await loginRes.json();
-
-        localStorage.setItem('token', json.accessToken);
-        localStorage.setItem('user', JSON.stringify(json.user));
-
+        saveSession(json);
         location.reload();
-      } catch (err) {
-        toast('Erro de conexão com o servidor', 'error');
+      } catch {
+        toast('Erro ao criar conta', 'error');
       }
     });
   }
