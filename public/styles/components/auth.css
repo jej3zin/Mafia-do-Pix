@@ -101,14 +101,18 @@
   width: 100%;
   padding: var(--space-3);
   background: var(--brand-01);
-  color: #000;
-  border: none;
+  color: var(--bg-01);
+  border: 1px solid transparent;
   border-radius: var(--radius-02);
   font-weight: 600;
   cursor: pointer;
   box-shadow: var(--shadow-btns);
 }
-
+.auth-form button:hover {
+  color: var(--brand-01);
+  background: var(--bg-01);
+  border: 1px solid var(--brand-01);
+}
 .auth-form p {
   margin-top: var(--space-3);
   color: var(--text-03);
