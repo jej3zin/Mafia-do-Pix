@@ -18,10 +18,13 @@ app.use(express.static('public'));
 // Configura CORS
 app.use(
   cors({
-    origin: 'https://mafiadopix.netlify.app', // seu front
+    origin: 'https://mafiadopix.netlify.app',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'], // adicione headers que você usa
   })
 );
+app.options('*', cors()); // libera qualquer preflight
+
 app.use(helmet());
 app.use(express.json());
 
