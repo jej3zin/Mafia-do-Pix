@@ -48,10 +48,10 @@ function renderProfile(user) {
   document.getElementById('profileBio').textContent = user.bio || '';
 
   document.getElementById('profileAvatar').src =
-    user.avatar_url || '/public/img/default-avatar.png';
+    user.avatar_url || '/img/default-avatar.png';
 
   document.getElementById('profileBanner').src =
-    user.banner_url || '/public/img/default-banner.png';
+    user.banner_url || '/img/default-banner.png';
 
   document.getElementById('profileSkeleton')?.remove();
   document.getElementById('profile')?.classList.remove('hidden');
