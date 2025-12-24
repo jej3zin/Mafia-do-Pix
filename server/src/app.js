@@ -23,7 +23,6 @@ app.use(
     allowedHeaders: ['Content-Type', 'Authorization'], // adicione headers que você usa
   })
 );
-app.options('/*', cors()); // libera qualquer preflight
 
 app.use(helmet());
 app.use(express.json());
