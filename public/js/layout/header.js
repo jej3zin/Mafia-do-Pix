@@ -1,4 +1,4 @@
-import { getSession } from '../public/js/config/session.js';
+import { getSession } from '../config/session.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   /* ================= ELEMENTOS ================= */
