@@ -1,3 +1,4 @@
+import { API_URL } from './config.js';
 import { escapeHTML, formatDate, isValidUsername } from './utils.js';
 
 document.addEventListener('DOMContentLoaded', initProfile);
@@ -11,17 +12,17 @@ async function initProfile() {
   }
 
   try {
-    const users = await fetchUsers();
-    const user = users.find((u) => u.username === username);
+    const res = await fetch(`${API_URL}/users/username/${username}`);
 
-    if (!user) {
+    if (!res.ok) {
       renderNotFound();
       return;
     }
 
+    const user = await res.json();
+
     renderProfile(user);
     renderFeed(user.posts || []);
-    renderFriends(user, users);
   } catch (err) {
     console.error(err);
     renderNotFound();
@@ -29,33 +30,11 @@ async function initProfile() {
 }
 
 /* =======================
-   URL RESOLVER (ROBUSTO)
+   URL RESOLVER
 ======================= */
 function getUsernameFromURL() {
-  // ?user=username
-  const params = new URLSearchParams(window.location.search);
-  if (params.has('user')) return params.get('user');
-
-  // #@username
-  if (location.hash.startsWith('#@')) {
-    return location.hash.slice(2);
-  }
-
-  // /@username (produção)
   const match = location.pathname.match(/\/@([\w-]+)/);
-  if (match) return match[1];
-
-  return null;
-}
-
-/* =======================
-   FETCH USERS (LIVE SERVER SAFE)
-======================= */
-async function fetchUsers() {
-  // profile.js está em /public/js/
-  const res = await fetch('../data/index.json');
-  if (!res.ok) throw new Error('Erro ao carregar DB');
-  return res.json();
+  return match ? match[1] : null;
 }
 
 /* =======================
@@ -64,20 +43,21 @@ async function fetchUsers() {
 function renderProfile(user) {
   document.title = `${user.name} (@${user.username})`;
 
-  document.getElementById('profileName').textContent = user.name || '';
+  document.getElementById('profileName').textContent = user.name;
   document.getElementById('profileUsername').textContent = '@' + user.username;
   document.getElementById('profileBio').textContent = user.bio || '';
 
-  document.getElementById('profileAvatar').src = user.avatar;
-  document.getElementById('profileBanner').src = user.banner;
+  document.getElementById('profileAvatar').src =
+    user.avatar_url || '/public/img/default-avatar.png';
+
+  document.getElementById('profileBanner').src =
+    user.banner_url || '/public/img/default-banner.png';
 
   document.getElementById('profileSkeleton')?.remove();
   document.getElementById('profile')?.classList.remove('hidden');
 }
 
-/* =======================
-   FEED
-======================= */
+/* ========= FEED ======== */
 function renderFeed(posts) {
   const feed = document.getElementById('profileFeed');
   if (!feed) return;
@@ -93,9 +73,9 @@ function renderFeed(posts) {
       <article class="feed-post">
         <p>${escapeHTML(p.content)}</p>
         <div class="feed-meta">
-          <span>${formatDate(p.createdAt)}</span>
-          <span>❤️ ${p.likes ?? 0}</span>
-          <span>💬 ${p.comments ?? 0}</span>
+          <span>${formatDate(p.created_at)}</span>
+          <span>❤️ ${p.likes_count ?? 0}</span>
+          <span>💬 ${p.comments_count ?? 0}</span>
         </div>
       </article>
     `

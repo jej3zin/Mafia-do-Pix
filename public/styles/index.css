@@ -25,5 +25,3 @@
 @import url('./pages/profile.css');
 
 /* ========== UTILITIES FINAIS (sempre por último) ========== */
-@import url('./utilities/animations.css');
-@import url('./utilities/utilities.css');
