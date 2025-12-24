@@ -35,6 +35,9 @@
 }
 
 /* === error page === */
+.pageErrorhidden {
+  display: none;
+}
 .error-page {
   min-height: 60vh;
   display: grid;

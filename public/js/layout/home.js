@@ -156,7 +156,7 @@ function renderNotFound(message = 'Página não encontrada') {
     </section>
   `;
 
-  root.classList.remove('hidden');
+  root.classList.remove('pageErrorhidden');
 }
 const path = location.pathname;
 
