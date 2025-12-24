@@ -81,3 +81,19 @@ export const me = async (req, res) => {
     username: user.username,
   });
 };
+
+/* ========== REFRESH TOKEN ========== */
+export const refresh = (req, res) => {
+  try {
+    const { refreshToken } = req.body;
+    if (!refreshToken) return res.status(400).json({ error: 'Token ausente' });
+
+    // verificar se é válido
+    const payload = verifyToken(refreshToken);
+    const accessToken = generateAccessToken({ id: payload.id });
+
+    res.json({ accessToken });
+  } catch (err) {
+    return res.status(401).json({ error: 'Token inválido' });
+  }
+};
