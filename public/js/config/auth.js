@@ -14,8 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
       body: JSON.stringify(payload),
     });
 
-    if (!res.ok) throw new Error();
-    return res.json();
+    const data = await res.json().catch(() => null);
+
+    if (!res.ok) {
+      throw new Error(data?.error || 'Erro na requisição');
+    }
+
+    return data;
   };
 
   const saveSession = ({ accessToken, user }) => {
@@ -64,16 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       await request('/auth/register', data);
 
+      toast('Conta criada! Entrando...', 'success');
+
       const json = await request('/auth/login', {
         username: data.username,
         password: data.password,
       });
 
       saveSession(json);
-      toast('Conta criada com sucesso!', 'success');
       location.reload();
-    } catch {
-      toast('Erro ao criar conta', 'error');
+    } catch (err) {
+      toast(err.message || 'Erro ao criar conta', 'error');
     }
   });
 });
