@@ -6,8 +6,6 @@ import {
   refresh,
 } from '../controllers/auth.controller.js';
 import { auth } from '../middleware/auth.middleware.js';
-import { me } from '../controllers/auth.controller.js'; // caminho correto pro seu controller
-import { refresh } from '../controllers/auth.controller.js';
 
 const router = Router();
 
