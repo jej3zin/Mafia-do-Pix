@@ -41,6 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
   loginForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    const payload = {
+      email: email.value,
+      password: password.value,
+    };
+
+    const res = await fetch(`${API_URL}/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
     const data = Object.fromEntries(new FormData(loginForm));
 
     try {
@@ -56,6 +67,17 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ================= REGISTER ================= */
   registerForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    const payload = {
+      email: email.value,
+      password: password.value,
+    };
+
+    const res = await fetch(`${API_URL}/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
 
     const data = Object.fromEntries(new FormData(registerForm));
 
