@@ -1,12 +1,13 @@
+// server/src/models/user.model.js
 import { pool } from '../config/db.js';
 
 export const UserModel = {
-  create: ({ name, username, password }) =>
+  create: ({ name, username, email, password }) =>
     pool.query(
-      `INSERT INTO users (name, username, password_hash)
+      `INSERT INTO users (name, username, email, password_hash)
        VALUES ($1,$2,$3)
        RETURNING id, name, username`,
-      [name, username, password]
+      [name, username, email, password]
     ),
 
   findByUsername: (username) =>

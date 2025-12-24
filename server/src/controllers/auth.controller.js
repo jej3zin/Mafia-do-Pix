@@ -1,3 +1,4 @@
+// server/src/controllers/auth.controller.js
 import { UserModel } from '../models/user.model.js';
 import { hashPassword, comparePassword } from '../utils/hashpassword.js';
 import {
@@ -7,7 +8,7 @@ import {
 
 /* ========== REGISTER ========== */
 export const register = async (req, res) => {
-  const { name, username, password } = req.body;
+  const { name, username, email, password } = req.body;
 
   const exists = await UserModel.findByUsername(username);
   if (exists.rows.length) {
@@ -15,7 +16,12 @@ export const register = async (req, res) => {
   }
 
   const hashed = await hashPassword(password);
-  const result = await UserModel.create({ name, username, password: hashed });
+  const result = await UserModel.create({
+    name,
+    username,
+    email,
+    password: hashed,
+  });
   const user = result.rows[0];
 
   const accessToken = generateAccessToken({ id: user.id });

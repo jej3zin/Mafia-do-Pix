@@ -120,20 +120,18 @@
       <div id="authModal" class="auth-modal">
        <div class="auth-container">
 
-       <button class="auth-close" id="closeAuth">
-         <ion-icon name="close"></ion-icon>
-       </button>
+         <button class="auth-close" id="closeAuth"><ion-icon name="close"></ion-icon></button>
 
-       <!-- IMAGE SIDE -->
-       <div class="auth-image">
-         <img src="/asset/briefing/bg.png" alt="Máfia do Pix" />
-       </div>
+         <!-- IMAGE SIDE -->
+         <div class="auth-image">
+           <img src="/asset/briefing/bg.png" alt="Máfia do Pix" />
+         </div>
 
-       <!-- FORM SIDE -->
-       <div class="auth-content">
+         <!-- FORM SIDE -->
+         <div class="auth-content">
 
-         <!-- LOGIN -->
-        <form id="loginForm" method="post" class="auth-form active">
+           <!-- LOGIN -->
+          <form id="loginForm" method="post" class="auth-form active">
         <h2>Entrar</h2>
 
         <input type="text" name="username" placeholder="Usuário" autocomplete="username" required />
@@ -145,14 +143,15 @@
           Não tem conta?
           <span class="switch" data-target="register">Criar agora</span>
         </p>
-        </form>
+          </form>
 
-        <!-- REGISTER -->
-        <form id="registerForm" method="post" class="auth-form">
+          <!-- REGISTER -->
+          <form id="registerForm" method="post" class="auth-form">
           <h2>Criar conta</h2>
   
           <input type="text" name="name" placeholder="Nome" autocomplete="name" required />
-          <input type="text" name="username" placeholder="Usuário" autocomplete="new-username" required />
+          <input type="text" name="username" placeholder="Usuário" autocomplete="username" required />
+          <input type="email" name="email" placeholder="Email" autocomplete="email" required />
           <input type="password" name="password" placeholder="Senha" autocomplete="new-password" required />
 
           <button type="submit">Registrar</button>
@@ -161,9 +160,9 @@
             Já tem conta?
             <span class="switch" data-target="login">Entrar</span>
           </p>
-        </form>
+          </form>
 
-    </div>
+         </div>
        </div>
       </div>
 
