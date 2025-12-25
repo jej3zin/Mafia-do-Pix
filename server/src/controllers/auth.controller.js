@@ -8,7 +8,7 @@ import {
 import { hashPassword, comparePassword } from '../utils/hashpassword.js';
 import {
   saveRefreshToken,
-  revokeRefreshToken,
+  revokeAllRefreshTokens,
 } from '../services/refresh.service.js';
 import { revokeAllRefreshTokens } from '../services/refresh.service.js';
 import { logAuthEvent } from '../services/auth-log.service.js';
