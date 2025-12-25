@@ -91,11 +91,12 @@ export const register = async (req, res) => {
     email,
     password: passwordHash,
   });
+  const createdUser = rows[0];
 
   res.status(201).json({ message: 'Usuário criado com sucesso' });
 
   await logAuthEvent({
-    userId: user.id,
+    userId: createdUser.id,
     action: 'register',
     req,
   });
