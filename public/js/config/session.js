@@ -1,3 +1,4 @@
+// public/js/config/session.js
 import { API_URL } from './api.js';
 
 export const getSession = async () => {

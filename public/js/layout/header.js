@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   /* ================= ELEMENTOS ================= */
   const openHeadDrop = document.getElementById('openHeadDrop');
   const headDropdown = document.getElementById('headDropdown');
+  const avatarImg = openHeadDrop?.querySelector('img');
 
   const loginBtn = document.getElementById('loginBtn');
   const logoutBtn = document.getElementById('logoutBtn');
@@ -22,7 +23,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   document.addEventListener('click', (e) => {
-    if (!headDropdown?.contains(e.target)) {
+    if (
+      !headDropdown?.contains(e.target) &&
+      !openHeadDrop?.contains(e.target)
+    ) {
       headDropdown?.classList.remove('showDropdown');
     }
   });
@@ -73,8 +77,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.location.href = `/@${user.username}`;
   };
 
+  if (user.avatar_url && avatarImg) {
+    avatarImg.src = user.avatar_url;
+  }
+
   logoutBtn.onclick = () => {
-    localStorage.clear();
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
     location.reload();
   };
 });

@@ -242,25 +242,25 @@ input[type='search'] {
 
 /* ================= DROPDOWN ================= */
 .head-dropdown {
+  min-width: 180px;
+  padding: var(--space-2);
   position: absolute;
   top: calc(100% + 8px);
   right: 0;
-  min-width: 180px;
-  background: var(--bg-01);
+  z-index: 30;
+  opacity: 0;
+  pointer-events: none;
   border: var(--border-01);
+  background: var(--bg-01);
   border-radius: var(--radius-03);
   box-shadow: var(--shadow-03);
-  padding: var(--space-2);
-  opacity: 0;
   transform: translateY(-10px) scale(0.96);
-  pointer-events: none;
   transition: var(--anima-01);
-  z-index: 30;
 }
 .head-dropdown.showDropdown {
+  pointer-events: auto;
   opacity: 1;
   transform: translateY(0) scale(1);
-  pointer-events: auto;
 }
 
 /* ================= DROPDOWN LINKS ================= */

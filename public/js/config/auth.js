@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
       saveSession(json);
       toast('Login realizado com sucesso!', 'success');
       location.reload();
-    } catch {
-      toast('Usuário ou senha inválidos', 'error');
+    } catch (err) {
+      toast(err.message || 'Usuário ou senha inválidos', 'error');
     }
   });
 
