@@ -91,10 +91,18 @@
   width: 100%;
   padding: var(--space-3);
   margin-bottom: var(--space-3);
-  background: var(--bg-01);
-  border: var(--border-01);
-  border-radius: var(--radius-02);
   color: var(--text-01);
+  outline: var(--border-01);
+  border: none
+  background: var(--bg-01);
+  border-radius: var(--radius-02);
+  transition: var(--anima-01);
+}
+.auth-form input:hover {
+  outline: 1px solid var(--brand-01);
+}
+.auth-form input:focus {
+  outline: 1px solid var(--brand-01);
 }
 
 .auth-form button {
