@@ -84,7 +84,7 @@ export const register = async (req, res) => {
 
   const passwordHash = await hashPassword(password);
 
-  await UserModel.create({
+  const { rows } = await UserModel.create({
     name,
     username,
     email,
