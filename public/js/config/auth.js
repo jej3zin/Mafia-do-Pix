@@ -49,6 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const data = Object.fromEntries(new FormData(loginForm));
 
+    // 🚫 validação mínima
+    if (!data.username || !data.password) {
+      toast('Preencha usuário e senha', 'error');
+      return;
+    }
+
     try {
       const json = await request('/auth/login', data);
       saveSession(json);
