@@ -3,7 +3,112 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Conta | Máfia do Pix</title>
+    <link rel="icon" href="/asset/briefing/logo_02.webp" />
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/styles/index.css" />
+
+    <!-- Script Loader -->
+    <script type="module" src="/js/loader.js"></script>
+    <script type="module" src="/js/components/toast.js"></script>
+
+    <!-- Import Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </head>
-  <body></body>
+  <body>
+    <div id="preloader">
+      <span class="loader">
+        <img src="/asset/briefing/logo_02.webp" alt="loading" />
+      </span>
+    </div>
+
+    <div id="content">
+      <header class="head">
+        <div class="head-box-left">
+          <a href="/index.html">
+            <img src="/asset/briefing/titulo_01.webp" alt="logotipo" />
+          </a>
+        </div>
+
+        <div class="head-box-right">
+          <button id="openHeadDrop" class="avatarBtn">
+            <img src="/asset/briefing/Avatar.webp" alt="Avatar" />
+          </button>
+
+          <div id="headDropdown" class="head-dropdown">
+            <p>Olá, <span id="hiUser">Visitante</span></p>
+            <button class="headDrop-links" id="viewsBtn">
+              <ion-icon name="person"></ion-icon>Perfil
+            </button>
+            <button class="headDrop-links" id="myaccountBtn">
+              <ion-icon name="person-circle"></ion-icon>Conta
+            </button>
+            <button class="headDrop-links" id="loginBtn">
+              <ion-icon name="log-in"></ion-icon>Login
+            </button>
+            <button class="headDrop-links" id="logoutBtn" style="display: none">
+              <ion-icon name="log-out"></ion-icon>Sair
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-account">
+        <section class="menu">
+          <button class="account-menu">
+            <ion-icon name="home"></ion-icon>Início
+          </button>
+          <button class="account-menu">
+            <ion-icon name="id-card"></ion-icon>informações Pessoais
+          </button>
+          <button class="account-menu">
+            <ion-icon name="lock-closed"></ion-icon>Segurança
+          </button>
+          <button class="account-menu">
+            <ion-icon name="key"></ion-icon>Senha
+          </button>
+          <button class="account-menu">
+            <ion-icon name="home"></ion-icon>Início
+          </button>
+        </section>
+
+        <section class="content-account"></section>
+      </main>
+
+      <footer class="foot">
+        <div class="foot-head">
+          <div class="logo">
+            <img src="/asset/briefing/logotipo-01.webp" alt="logotipo" />
+          </div>
+
+          <div class="foot-links">
+            <h3>Navegação</h3>
+
+            <a href="./index.html">Home</a>
+            <a href="./pages/alphabet.html">Alfabeto</a>
+            <a href="./pages/numbers.html">Números</a>
+            <a href="./pages/texts.html">Textos</a>
+            <a href="./pages/spam.html">Spans</a>
+          </div>
+
+          <div class="foot-social">
+            <h3>Nossas Redes</h3>
+            <a href="https://github.com/jej3zin"
+              ><ion-icon class="foot-icon" name="logo-github"></ion-icon
+            ></a>
+          </div>
+        </div>
+
+        <p class="foot-copy">Copyright &copy; 2025-2027</p>
+      </footer>
+    </div>
+  </body>
 </html>
