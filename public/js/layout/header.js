@@ -81,9 +81,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     avatarImg.src = user.avatar_url;
   }
 
-  logoutBtn.onclick = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
+  logoutBtn.onclick = async () => {
+    const token = localStorage.getItem('token');
+
+    await fetch(`${API_URL}/auth/logout`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    localStorage.clear();
     location.reload();
   };
 });

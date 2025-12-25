@@ -1,3 +1,4 @@
+// server/src/services/user.service.js
 import { UserModel } from '../models/user.model.js';
 
 export const getPublicProfile = (username) =>
