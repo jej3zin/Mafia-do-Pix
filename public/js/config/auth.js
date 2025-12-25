@@ -72,6 +72,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const data = Object.fromEntries(new FormData(registerForm));
 
+    // 🚫 validação mínima
+    if (!data.username || !data.password || !data.name) {
+      toast('Preencha nome, usuário e senha', 'error');
+      return;
+    }
+
+    // opcional: validação extra rápida
+    if (data.password.length < 16) {
+      toast('Senha muito curta (mínimo 16 caracteres)', 'error');
+      return;
+    }
+
     try {
       await request('/auth/register', data);
 
