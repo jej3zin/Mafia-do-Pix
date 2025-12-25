@@ -2,7 +2,6 @@
 #toast-root {
   position: fixed;
   top: var(--space-4);
-  left: 50%;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -12,16 +11,16 @@
 
 /* ================= TOAST ================= */
 .toast {
-  width: min-content;
-  background: var(--bg-01);
-  border: var(--border-01);
-  border-radius: var(--radius-03);
-  box-shadow: var(--shadow-03);
+  width: max-content;
   padding: var(--space-4);
   color: var(--text-01);
   display: flex;
   align-items: center;
   gap: var(--gap-03);
+  background: var(--bg-01);
+  border: var(--border-01);
+  border-radius: var(--radius-03);
+  box-shadow: var(--shadow-03);
   animation: toastIn 0.4s ease forwards;
 }
 
