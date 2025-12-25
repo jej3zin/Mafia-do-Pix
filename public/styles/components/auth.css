@@ -93,7 +93,7 @@
   margin-bottom: var(--space-3);
   color: var(--text-01);
   outline: var(--border-01);
-  border: none
+  border: none;
   background: var(--bg-01);
   border-radius: var(--radius-02);
   transition: var(--anima-01);
