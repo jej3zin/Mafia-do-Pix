@@ -264,7 +264,7 @@ input[type='search'] {
 }
 
 /* ================= DROPDOWN LINKS ================= */
-.deadDrop-links {
+.headDrop-links {
   width: 100%;
   background: transparent;
   border: none;
@@ -279,11 +279,11 @@ input[type='search'] {
   transition: var(--anima-01);
   font-size: 0.9rem;
 }
-.deadDrop-links:hover {
+.headDrop-links:hover {
   background: var(--brand-06);
   color: var(--brand-01);
   transform: translateX(4px);
 }
-.deadDrop-links ion-icon {
+.headDrop-links ion-icon {
   font-size: 1.1rem;
 }
