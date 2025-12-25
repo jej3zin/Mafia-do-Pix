@@ -10,7 +10,6 @@ import {
   saveRefreshToken,
   revokeAllRefreshTokens,
 } from '../services/refresh.service.js';
-import { revokeAllRefreshTokens } from '../services/refresh.service.js';
 import { logAuthEvent } from '../services/auth-log.service.js';
 
 /* ================= LOGIN ================= */
