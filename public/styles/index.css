@@ -9,6 +9,7 @@
 /* 3. Estilos globais (body, html, tipografia, links) */
 @import url('./_global.css');
 
+@import url('./post.css'); /* arquivo temporário */
 /* ========== LAYOUT ========== */
 @import url('./layout/header.css');
 @import url('./layout/main.css');

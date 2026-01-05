@@ -1,6 +1,61 @@
 // public/js/layout/header.js
 import { getSession } from '../config/session.js';
 
+const openNotif = document.getElementById('openNotif');
+const notifModal = document.getElementById('notifModal');
+const closeNotif = document.getElementById('closeNotif');
+const notifContent = document.getElementById('notifContent');
+
+// 🔥 CONFIGURA AQUI
+const GITHUB_USER = 'jej3zin';
+const GITHUB_REPO = 'Mafia-do-Pix';
+
+async function loadLatestRelease() {
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/releases/latest`
+    );
+
+    if (!res.ok) throw new Error('Sem release');
+
+    const data = await res.json();
+
+    const rawMarkdown = data.body || 'Sem descrição.';
+    const html = DOMPurify.sanitize(marked.parse(rawMarkdown));
+
+    notifContent.innerHTML = `
+  <div class="markdown-body">
+    ${html}
+  </div>
+  <a href="${data.html_url}" target="_blank">Ver no GitHub →</a>
+`;
+  } catch (err) {
+    notifContent.innerHTML = `
+      <p>🚧 Nenhuma release publicada ainda.</p>
+      <a href="https://github.com/${GITHUB_USER}/${GITHUB_REPO}" target="_blank">
+        Ver repositório →
+      </a>
+    `;
+  }
+}
+
+openNotif.addEventListener('click', async () => {
+  notifModal.classList.remove('hidden');
+  notifContent.innerHTML = '<p>Carregando release…</p>';
+  await loadLatestRelease();
+});
+
+closeNotif.addEventListener('click', () => {
+  notifModal.classList.add('hidden');
+});
+
+// Fecha clicando fora
+notifModal.addEventListener('click', (e) => {
+  if (e.target === notifModal) {
+    notifModal.classList.add('hidden');
+  }
+});
+
 document.addEventListener('DOMContentLoaded', async () => {
   /* ================= ELEMENTOS ================= */
   const openHeadDrop = document.getElementById('openHeadDrop');

@@ -1,0 +1,88 @@
+.post-card {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: var(--border-02);
+  border-radius: var(--radius-03);
+  transition: var(--anima-01);
+}
+.post-card:hover {
+  border: 1px solid var(--brand-01);
+}
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.box-info-left {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-02);
+}
+.box-info-left strong {
+  font-size: 1.1rem;
+}
+.box-info-left span {
+  font-size: 0.9rem;
+  color: var(--text-02);
+}
+.box-info-left img {
+  height: 3.5rem;
+  width: 3.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+box-info-right {
+  color: var(--text-02);
+}
+.post-body {
+  margin: 0.5rem 0;
+}
+.post-content {
+  max-height: 4.5rem;
+  overflow: hidden;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  /* white-space: pre-wrap; */
+  /* line-height: 1.5; */
+  transition: max-height 0.3s ease;
+}
+.post-content.collapsed {
+  max-height: 6.6em;
+  overflow: hidden;
+}
+.see-more {
+  background: none;
+  border: none;
+  color: var(--text-01);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 0.25rem;
+}
+.see-more:hover {
+  text-decoration: underline;
+  color: var(--brand-01);
+}
+
+.post-footer span {
+  display: flex;
+  align-items: center;
+}
+.post-footer ion-icon {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--brand-01);
+}
+
+.post-tags {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: var(--gap-03);
+}
+.tag {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.9rem;
+  border-radius: var(--radius-03);
+  background: var(--bg-03);
+}

@@ -1,4 +1,5 @@
 .main {
+  padding: 0 8rem;
   padding-top: var(--header-height);
 }
 .main-banner {
