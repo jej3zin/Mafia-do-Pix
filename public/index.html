@@ -44,6 +44,7 @@
             <a class="nav-links" href="/pages/texts.html">Textos</a>
             <a class="nav-links" href="/pages/spam.html">Spans</a>
             <a class="nav-links" href="/pages/bro.html">Mano, Porquê...</a>
+            <a class="nav-links" href="/pages/goodnight.html">Boa Noite</a>
           </nav>
         </div>
 
@@ -222,5 +223,10 @@
     <script type="module" src="/js/layout/header.js"></script>
     <script type="module" src="/js/components/search.js"></script>
     <script type="module" src="/js/config/auth.js"></script>
+
+    <script type="module">
+      import { renderTimeline } from '/js/timeline.js';
+      renderTimeline();
+    </script>
   </body>
 </html>

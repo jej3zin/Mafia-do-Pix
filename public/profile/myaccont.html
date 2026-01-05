@@ -80,7 +80,57 @@
           </button>
         </section>
 
-        <section class="content-account"></section>
+        <section class="content-account" data-section="home">
+          <img src="" alt="Avatar do Usuário" class="account-avatar" />
+          <h2 class="account-username">Nome do Usuário</h2>
+          <p class="account-email"></p>
+        </section>
+
+         <section class="content-account" data-section="personal-info" style="display: none">
+          <div class="table-list">
+            <div class="table-row">
+              <span class="table-label">Foto de Perfil</span>
+              <span class="table-value" id="info-avatar"></span>
+            </div>
+            <div class="table-row">
+              <span class="table-label">Nome de Usuário:</span>
+              <span class="table-value" id="info-username"></span>
+            </div>
+            <div class="table-row">
+              <span class="table-label">Email:</span>
+              <span class="table-value" id="info-email"></span>
+            </div>
+            <div class="table-row">
+              <span class="table-label">Data de Registro:</span>
+              <span class="table-value" id="info-registration-date"></span>
+            </div>
+            <div class="table-row">
+              <span class="table-label">Idioma:</span>
+              <span class="table-value" id="info-language"></span>
+          </div>
+        </section>
+
+        <section class="content-account" data-section="security" style="display: none">
+          <h2>Configurações de Segurança</h2>
+          <p>Aqui você pode gerenciar suas configurações de segurança.</p>
+
+          <div class="box-recent-activities">
+            <h3>Atividades Recentes</h3>
+            <ul id="recent-activities">
+              <!-- Atividades recentes serão listadas aqui -->
+            </ul>
+          </div>
+
+          <div class="box-logins">
+            <h3>Como você faz login</h3>
+            <ul id="login-methods">
+              <li>2FA</li>
+              <li>Chaves de acesso</li>
+              <li>Senha</li>
+              <li>Authenticator</li>
+            </ul>
+          </div>
+        </section>
       </main>
 
       <footer class="foot">
@@ -110,5 +160,10 @@
         <p class="foot-copy">Copyright &copy; 2025-2027</p>
       </footer>
     </div>
+
+    <script type="module" src="/js/layout/home.js"></script>
+    <script type="module" src="/js/layout/header.js"></script>
+    <script type="module" src="/js/components/search.js"></script>
+    <script type="module" src="/js/config/auth.js"></script>
   </body>
 </html>

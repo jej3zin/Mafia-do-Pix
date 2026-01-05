@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Máfia do Pix | Mano, Porquê...</title>
+    <title>Máfia do Pix | Boa Noite</title>
     <link rel="icon" href="/asset/briefing/logo_02.webp" />
 
     <!-- Import CSS -->
@@ -43,10 +43,10 @@
             <a class="nav-links" href="/pages/numbers.html">Números</a>
             <a class="nav-links" href="/pages/texts.html">Textos</a>
             <a class="nav-links" href="/pages/spam.html">Spans</a>
-            <a class="nav-links activeNav" href="/pages/bro.html"
-              >Mano, Porquê...</a
+            <a class="nav-links" href="/pages/bro.html">Mano, Porquê...</a>
+            <a class="nav-links activeNav" href="/pages/goodnight.html"
+              >Boa Noite</a
             >
-            <a class="nav-links" href="/pages/goodnight.html">Boa Noite</a>
           </nav>
         </div>
 
@@ -87,7 +87,19 @@
         </div>
       </header>
 
-      <main class="main"><div id="timeline" class="timeline"></div></main>
+      <main class="main">
+        <div class="main-banner">
+          <h1>Máfia do Pix</h1>
+          <p class="subtitle">
+            A Trindade caiu, mas <strong>nós</strong> surgimos no lugar.
+          </p>
+          <img src="/asset/briefing/banner-02.webp" alt="banner" />
+        </div>
+
+        <section class="siga-me"></section>
+
+        <div id="timeline" class="timeline"></div>
+      </main>
 
       <footer class="foot">
         <div class="foot-head">
@@ -117,10 +129,106 @@
       </footer>
     </div>
 
-    <script type="module" src="/public/js/layout/header.js"></script>
+    <div id="authModal" class="auth-modal">
+      <div class="auth-container">
+        <button class="auth-close" id="closeAuth">
+          <ion-icon name="close"></ion-icon>
+        </button>
+
+        <!-- IMAGE SIDE -->
+        <div class="auth-image">
+          <img src="/asset/briefing/bg.png" alt="Máfia do Pix" />
+        </div>
+
+        <!-- FORM SIDE -->
+        <div class="auth-content">
+          <!-- LOGIN -->
+          <form
+            id="loginForm"
+            method="post"
+            class="auth-form active"
+            novalidate
+          >
+            <h2>Entrar</h2>
+
+            <input
+              type="text"
+              name="username"
+              required
+              placeholder="Usuário"
+              autocomplete="username"
+            />
+            <input
+              type="password"
+              name="password"
+              required
+              placeholder="Senha"
+              autocomplete="current-password"
+            />
+
+            <button type="submit">Entrar</button>
+
+            <p>
+              Não tem conta?
+              <span class="switch" data-target="register">Criar agora</span>
+            </p>
+          </form>
+
+          <!-- REGISTER -->
+          <form id="registerForm" method="post" class="auth-form">
+            <h2>Criar conta</h2>
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Nome"
+              autocomplete="name"
+              required
+            />
+            <input
+              type="text"
+              name="username"
+              placeholder="Usuário"
+              autocomplete="username"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              autocomplete="email"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Senha"
+              autocomplete="new-password"
+              required
+            />
+
+            <button type="submit">Registrar</button>
+
+            <p>
+              Já tem conta?
+              <span class="switch" data-target="login">Entrar</span>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast-root"></div>
+    <div id="errorPage" class="pageErrorhidden"></div>
+
+    <script type="module" src="/js/layout/home.js"></script>
+    <script type="module" src="/js/layout/header.js"></script>
+    <script type="module" src="/js/components/search.js"></script>
+    <script type="module" src="/js/config/auth.js"></script>
+
     <script type="module">
       import { renderTimeline } from '/js/timeline.js';
-      renderTimeline({ tag: 'bro' });
+      renderTimeline({ tag: 'goodnight' });
     </script>
   </body>
 </html>

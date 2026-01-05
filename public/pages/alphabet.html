@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Máfia do Pix | Alphabet</title>
-    <link rel="icon" href="/public/asset/briefing/logo_02.webp" />
+    <link rel="icon" href="/asset/briefing/logo_02.webp" />
 
     <!-- Import CSS -->
-    <link rel="stylesheet" href="/public/styles/index.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
 
     <!-- Script Loader -->
-    <script type="module" src="/public/js/loader.js"></script>
+    <script type="module" src="/js/loader.js"></script>
+    <script type="module" src="/js/components/toast.js"></script>
 
     <!-- Import Icons -->
     <script
@@ -25,7 +26,7 @@
   <body>
     <div id="preloader">
       <span class="loader">
-        <img src="/public/asset/briefing/logo_02.webp" alt="loading" />
+        <img src="/asset/briefing/logo_02.webp" alt="loading" />
       </span>
     </div>
 
@@ -33,7 +34,7 @@
       <header class="head">
         <div class="head-box-left">
           <a href="/index.html">
-            <img src="/public/asset/briefing/logo_02.webp" alt="logotipo" />
+            <img src="/asset/briefing/logo_02.webp" alt="logotipo" />
           </a>
 
           <nav class="head-nav">
@@ -45,6 +46,7 @@
             <a class="nav-links" href="/pages/texts.html">Textos</a>
             <a class="nav-links" href="/pages/spam.html">Spans</a>
             <a class="nav-links" href="/pages/bro.html">Mano, Porquê...</a>
+            <a class="nav-links" href="/pages/goodnight.html">Boa Noite</a>
           </nav>
         </div>
 
@@ -63,28 +65,46 @@
 
           <div id="searchResults" class="search-results"></div>
 
-          <button id="avatarBtn" class="avatarBtn">
-            <img src="/public/asset/avatares/Avatar.webp" alt="Avatar" />
+          <button id="openHeadDrop" class="avatarBtn">
+            <img src="/asset/briefing/Avatar.webp" alt="Avatar" />
           </button>
+
+          <div id="headDropdown" class="head-dropdown">
+            <p>Olá, <span id="hiUser">Visitante</span></p>
+            <button class="headDrop-links" id="viewsBtn">
+              <ion-icon name="person"></ion-icon>Perfil
+            </button>
+            <button class="headDrop-links" id="myaccountBtn">
+              <ion-icon name="person-circle"></ion-icon>Conta
+            </button>
+            <button class="headDrop-links" id="loginBtn">
+              <ion-icon name="log-in"></ion-icon>Login
+            </button>
+            <button class="headDrop-links" id="logoutBtn" style="display: none">
+              <ion-icon name="log-out"></ion-icon>Sair
+            </button>
+          </div>
         </div>
       </header>
 
-      <main class="main"><div id="timeline" class="timeline"></div></main>
+      <main class="main">
+        <div id="timeline" class="timeline"></div>
+      </main>
 
       <footer class="foot">
         <div class="foot-head">
           <div class="logo">
-            <img src="/public/asset/briefing/logotipo-01.webp" alt="logotipo" />
+            <img src="/asset/briefing/logotipo-01.webp" alt="logotipo" />
           </div>
 
           <div class="foot-links">
             <h3>Navegação</h3>
 
-            <a href="/index.html">Home</a>
-            <a href="/pages/alphabet.html">Alfabeto</a>
-            <a href="/pages/numbers.html">Números</a>
-            <a href="/pages/texts.html">Textos</a>
-            <a href="/pages/spam.html">Spans</a>
+            <a href="./index.html">Home</a>
+            <a href="./pages/alphabet.html">Alfabeto</a>
+            <a href="./pages/numbers.html">Números</a>
+            <a href="./pages/texts.html">Textos</a>
+            <a href="./pages/spam.html">Spans</a>
           </div>
 
           <div class="foot-social">
@@ -100,5 +120,9 @@
     </div>
 
     <script type="module" src="/public/js/layout/header.js"></script>
+    <script type="module">
+      import { renderTimeline } from '/js/timeline.js';
+      renderTimeline({ tag: 'alphabet' });
+    </script>
   </body>
 </html>
