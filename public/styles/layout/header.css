@@ -251,19 +251,33 @@ input[type='search'] {
   position: fixed;
   inset: 0;
   z-index: 999;
-  background: var(--funds-02);
+  background: var(--funds-03);
 }
 .notif-modal.hidden {
   display: none;
 }
 
 .notif-box {
+  height: 80vh;
   width: 100%;
   max-width: 720px;
   padding: 1rem;
+  overflow: auto;
+  position: relative;
+  box-sizing: border-box;
   background: var(--bg-01);
   border-radius: var(--radius-03);
   box-shadow: var(--shadow-01);
+}
+.notif-box::-webkit-scrollbar {
+  width: 6px;
+}
+.notif-box::-webkit-scrollbar-thumb {
+  background-color: var(--brand-01);
+  border-radius: 3px;
+}
+.notif-box::-webkit-scrollbar-track {
+  background: var(--bg-05);
 }
 
 .notif-header {
@@ -332,6 +346,7 @@ input[type='search'] {
 
 .markdown-body li {
   margin: 0.25rem 0;
+  list-style-type: disc;
 }
 
 .markdown-body code {
