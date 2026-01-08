@@ -1,3 +1,4 @@
+//js/components/search.js
 import { API_URL } from '../config/api.js';
 import { escapeHTML } from '../utils/index.js';
 

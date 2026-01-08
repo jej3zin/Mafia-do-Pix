@@ -1,3 +1,4 @@
+// js/loader.js
 const preloader = document.getElementById('preloader');
 const content = document.getElementById('content');
 

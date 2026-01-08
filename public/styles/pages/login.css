@@ -1,68 +1,35 @@
-/* ================= AUTH MODAL ================= */
+.sect-main {
+  height: 100vh;
+  background-image: url(/asset/briefing/bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .auth-modal {
-  position: fixed;
-  inset: 0;
-  background: var(--funds-03);
-  backdrop-filter: var(--blur-3);
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: var(--anima-01);
-  z-index: 100;
-}
-
-.auth-modal.show {
-  opacity: 1;
-  pointer-events: auto;
-  visibility: visible;
-}
-
-/* ================= AUTH CONTAINER ================= */
-.auth-container {
-  width: 900px;
-  height: 520px;
-  background: var(--bg-02);
-  border-radius: var(--radius-04);
-  display: flex;
-  overflow: hidden;
-  box-shadow: var(--shadow-03);
-  animation: authIn 0.4s ease;
-  position: relative;
-}
-
-/* CLOSE */
-.auth-close {
-  position: absolute;
-  top: var(--space-3);
-  right: var(--space-3);
-  background: transparent;
-  border: none;
-  color: var(--text-02);
-  font-size: 1.5rem;
-  cursor: pointer;
+  position: fixed;
+  inset: 0;
   z-index: 10;
+  background: var(--funds-02);
+  backdrop-filter: var(--blur-3);
+  transition: var(--anima-01);
 }
-
-/* IMAGE */
-.auth-image {
-  width: 50%;
-}
-.auth-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* CONTENT */
-.auth-content {
-  width: 50%;
-  padding: var(--space-9);
+.auth-container {
+  width: 40%;
+  height: 80vh;
+  display: flex;
   position: relative;
+  /* overflow: hidden; */
+  background: var(--bg-02);
+  box-shadow: var(--shadow-03);
+  border-radius: var(--radius-04);
+  animation: authIn 0.4s ease;
 }
-
-/* FORMS */
+.auth-content {
+  /* position: relative; */
+}
 .auth-form {
   padding: 3rem;
   display: flex;
@@ -75,18 +42,26 @@
   pointer-events: none;
   transition: var(--anima-01);
 }
-
 .auth-form.active {
   opacity: 1;
   transform: translateX(0);
-  /* pointer-events: auto; */
+  pointer-events: auto;
 }
-
 .auth-form h2 {
-  color: var(--text-01);
   margin-bottom: var(--space-5);
+  font-size: 2rem;
+  color: var(--text-01);
 }
-
+.label-input {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-01);
+  color: var(--text-03);
+}
+.label-input ion-icon {
+  font-size: 1.2rem;
+  color: var(--text-03);
+}
 .auth-form input {
   width: 100%;
   padding: var(--space-3);
@@ -104,7 +79,6 @@
 .auth-form input:focus {
   outline: 1px solid var(--brand-01);
 }
-
 .auth-form button {
   width: 100%;
   padding: var(--space-3);
@@ -115,6 +89,7 @@
   font-weight: 600;
   cursor: pointer;
   box-shadow: var(--shadow-btns);
+  transition: var(--anima-01);
 }
 .auth-form button:hover {
   color: var(--brand-01);

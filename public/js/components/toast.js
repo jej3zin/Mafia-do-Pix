@@ -1,3 +1,4 @@
+// /js/components/toast.js
 let toastTimeout;
 
 const ICONS = {

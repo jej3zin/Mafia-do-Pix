@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Máfia do Pix</title>
+    <link rel="icon" href="/asset/briefing/logo_02.webp" />
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/styles/index.css" />
+
+    <!-- Script Loader -->
+    <script type="module" src="/js/loader.js"></script>
+    <script type="module" src="/js/components/toast.js"></script>
+
+    <!-- Markdown render -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+
+    <!-- Import Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <div id="preloader">
+      <span class="loader">
+        <img src="/asset/briefing/logo_02.webp" alt="loading" />
+      </span>
+    </div>
+
+    <div id="content">
+      <section class="sect-main">
+        <div class="auth-modal">
+          <div class="auth-container">
+            <div class="auth-content">
+              <!-- LOGIN -->
+              <form
+                id="loginForm"
+                method="post"
+                class="auth-form active"
+                novalidate
+              >
+                <h2>Entrar</h2>
+                <label class="label-input" for="text"
+                  ><ion-icon name="person"></ion-icon>Usuário</label
+                >
+                <input
+                  id="text"
+                  type="text"
+                  name="username"
+                  required
+                  placeholder="luupinheiro"
+                  autocomplete="username"
+                />
+                <label class="label-input" for="password"
+                  ><ion-icon name="lock-closed"></ion-icon>Senha</label
+                >
+                <input
+                  id="password"
+                  type="password"
+                  name="password"
+                  required
+                  placeholder="••••••••••••"
+                  autocomplete="current-password"
+                />
+
+                <button type="submit">Entrar</button>
+
+                <p>
+                  Não tem conta?
+                  <span class="switch" data-target="register">Criar agora</span>
+                </p>
+              </form>
+
+              <!-- REGISTER -->
+              <form id="registerForm" method="post" class="auth-form">
+                <h2>Criar conta</h2>
+
+                <label class="label-input" for="name"
+                  ><ion-icon name="person"></ion-icon>Nome</label
+                >
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Luupe"
+                  autocomplete="name"
+                  required
+                />
+                <label class="label-input" for="username"
+                  ><ion-icon name="person"></ion-icon>Usuário</label
+                >
+                <input
+                  id="username"
+                  type="text"
+                  name="username"
+                  placeholder="luupinheiro"
+                  autocomplete="username"
+                  required
+                />
+                <label class="label-input" for="email"
+                  ><ion-icon name="mail"></ion-icon>Email</label
+                >
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="luupinheiro@mail.com"
+                  autocomplete="email"
+                  required
+                />
+                <label class="label-input" for="pass"
+                  ><ion-icon name="lock-closed"></ion-icon>Senha</label
+                >
+                <input
+                  id="pass"
+                  type="password"
+                  name="password"
+                  placeholder="••••••••••••"
+                  autocomplete="new-password"
+                  required
+                />
+
+                <button type="submit">Registrar</button>
+
+                <p>
+                  Já tem conta?
+                  <span class="switch" data-target="login">Entrar</span>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <footer class="foot">
+        <div class="foot-head">
+          <div class="logo">
+            <img src="/asset/briefing/logotipo-01.webp" alt="logotipo" />
+          </div>
+
+          <div class="foot-links">
+            <h3>Navegação</h3>
+
+            <a href="./index.html">Home</a>
+            <a href="./pages/alphabet.html">Alfabeto</a>
+            <a href="./pages/numbers.html">Números</a>
+            <a href="./pages/texts.html">Textos</a>
+            <a href="./pages/spam.html">Spans</a>
+          </div>
+
+          <div class="foot-social">
+            <h3>Nossas Redes</h3>
+            <a href="https://github.com/jej3zin"
+              ><ion-icon class="foot-icon" name="logo-github"></ion-icon
+            ></a>
+          </div>
+        </div>
+
+        <p class="foot-copy">Copyright &copy; 2025-2027</p>
+      </footer> -->
+    </div>
+
+    <div id="toast-root"></div>
+    <div id="errorPage" class="pageErrorhidden"></div>
+
+    <script type="module" src="/js/layout/home.js"></script>
+    <script type="module" src="/js/layout/header.js"></script>
+    <script type="module" src="/js/components/search.js"></script>
+    <script type="module" src="/js/config/auth.js"></script>
+  </body>
+</html>

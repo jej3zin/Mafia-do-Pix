@@ -69,6 +69,10 @@
 
           <div id="searchResults" class="search-results"></div>
 
+          <button id="openNotif" class="openNotif">
+            <ion-icon name="notifications"></ion-icon>
+          </button>
+
           <button id="openHeadDrop" class="avatarBtn">
             <img src="/asset/briefing/Avatar.webp" alt="Avatar" />
           </button>
@@ -81,9 +85,9 @@
             <button class="headDrop-links" id="myaccountBtn">
               <ion-icon name="person-circle"></ion-icon>Conta
             </button>
-            <button class="headDrop-links" id="loginBtn">
+            <a href="/pages/login.html" class="headDrop-links" id="loginBtn">
               <ion-icon name="log-in"></ion-icon>Login
-            </button>
+            </a>
             <button class="headDrop-links" id="logoutBtn" style="display: none">
               <ion-icon name="log-out"></ion-icon>Sair
             </button>
@@ -133,95 +137,6 @@
       </footer>
     </div>
 
-    <div id="authModal" class="auth-modal">
-      <div class="auth-container">
-        <button class="auth-close" id="closeAuth">
-          <ion-icon name="close"></ion-icon>
-        </button>
-
-        <!-- IMAGE SIDE -->
-        <div class="auth-image">
-          <img src="/asset/briefing/bg.png" alt="Máfia do Pix" />
-        </div>
-
-        <!-- FORM SIDE -->
-        <div class="auth-content">
-          <!-- LOGIN -->
-          <form
-            id="loginForm"
-            method="post"
-            class="auth-form active"
-            novalidate
-          >
-            <h2>Entrar</h2>
-
-            <input
-              type="text"
-              name="username"
-              required
-              placeholder="Usuário"
-              autocomplete="username"
-            />
-            <input
-              type="password"
-              name="password"
-              required
-              placeholder="Senha"
-              autocomplete="current-password"
-            />
-
-            <button type="submit">Entrar</button>
-
-            <p>
-              Não tem conta?
-              <span class="switch" data-target="register">Criar agora</span>
-            </p>
-          </form>
-
-          <!-- REGISTER -->
-          <form id="registerForm" method="post" class="auth-form">
-            <h2>Criar conta</h2>
-
-            <input
-              type="text"
-              name="name"
-              placeholder="Nome"
-              autocomplete="name"
-              required
-            />
-            <input
-              type="text"
-              name="username"
-              placeholder="Usuário"
-              autocomplete="username"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              autocomplete="email"
-              required
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="Senha"
-              autocomplete="new-password"
-              required
-            />
-
-            <button type="submit">Registrar</button>
-
-            <p>
-              Já tem conta?
-              <span class="switch" data-target="login">Entrar</span>
-            </p>
-          </form>
-        </div>
-      </div>
-    </div>
-
     <!-- Modal de Notificações / Release -->
     <div id="notifModal" class="notif-modal hidden">
       <button id="closeNotif">
@@ -241,11 +156,9 @@
     <div id="toast-root"></div>
     <div id="errorPage" class="pageErrorhidden"></div>
 
-    <script type="module" src="/js/layout/home.js"></script>
-    <script type="module" src="/js/layout/header.js"></script>
-    <script type="module" src="/js/components/search.js"></script>
     <script type="module" src="/js/config/auth.js"></script>
 
+    <script type="module" src="/js/index.js"></script>
     <script type="module">
       import { renderTimeline } from '/js/timeline.js';
       renderTimeline({ tag: 'goodnight' });

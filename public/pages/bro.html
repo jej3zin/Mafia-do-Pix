@@ -47,9 +47,7 @@
             <a class="nav-links" href="/pages/numbers.html">Números</a>
             <a class="nav-links" href="/pages/texts.html">Textos</a>
             <a class="nav-links" href="/pages/spam.html">Spans</a>
-            <a class="nav-links activeNav" href="/pages/bro.html"
-              >Mano, Porquê...</a
-            >
+            <a class="nav-links activeNav" href="/pages/bro.html">Mano, Porquê...</a>
             <a class="nav-links" href="/pages/goodnight.html">Boa Noite</a>
           </nav>
         </div>
@@ -69,6 +67,10 @@
 
           <div id="searchResults" class="search-results"></div>
 
+          <button id="openNotif" class="openNotif">
+            <ion-icon name="notifications"></ion-icon>
+          </button>
+
           <button id="openHeadDrop" class="avatarBtn">
             <img src="/asset/briefing/Avatar.webp" alt="Avatar" />
           </button>
@@ -81,9 +83,9 @@
             <button class="headDrop-links" id="myaccountBtn">
               <ion-icon name="person-circle"></ion-icon>Conta
             </button>
-            <button class="headDrop-links" id="loginBtn">
+            <a href="/pages/login.html" class="headDrop-links" id="loginBtn">
               <ion-icon name="log-in"></ion-icon>Login
-            </button>
+            </a>
             <button class="headDrop-links" id="logoutBtn" style="display: none">
               <ion-icon name="log-out"></ion-icon>Sair
             </button>
@@ -137,7 +139,12 @@
       </div>
     </div>
 
-    <script type="module" src="/public/js/layout/header.js"></script>
+    <div id="toast-root"></div>
+    <div id="errorPage" class="pageErrorhidden"></div>
+
+    <script type="module" src="/js/config/auth.js"></script>
+
+    <script type="module" src="/js/index.js"></script>
     <script type="module">
       import { renderTimeline } from '/js/timeline.js';
       renderTimeline({ tag: 'bro' });

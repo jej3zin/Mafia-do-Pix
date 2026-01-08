@@ -10,6 +10,7 @@
 @import url('./_global.css');
 
 @import url('./post.css'); /* arquivo temporário */
+
 /* ========== LAYOUT ========== */
 @import url('./layout/header.css');
 @import url('./layout/main.css');
@@ -17,12 +18,12 @@
 
 /* ========== COMPONENTES ========== */
 @import url('./components/loader.css');
-@import url('./components/auth.css');
 @import url('./components/toast.css');
 
 /* ========== MODALS  ========== */
 
 /* ========== PÁGINAS (escopo local, SEM sobrescrever globais) ========== */
 @import url('./pages/profile.css');
+@import url('./pages/login.css');
 
 /* ========== UTILITIES FINAIS (sempre por último) ========== */
