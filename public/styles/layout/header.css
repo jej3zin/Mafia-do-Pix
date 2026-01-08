@@ -181,7 +181,10 @@ input[type='search'] {
 
 /* mostra resultados quando tem a classe show */
 .search-results.show {
-  display: block;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-02);
 }
 
 /* cada item da busca */

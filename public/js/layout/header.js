@@ -41,7 +41,8 @@ async function loadLatestRelease() {
 
 openNotif.addEventListener('click', async () => {
   notifModal.classList.remove('hidden');
-  notifContent.innerHTML = '<p>Carregando release…</p>';
+  notifContent.innerHTML =
+    '<p>Carregando release…</p> || Não foi possível carregar a release.';
   await loadLatestRelease();
 });
 
