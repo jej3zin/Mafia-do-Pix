@@ -25,5 +25,6 @@
 /* ========== PÁGINAS (escopo local, SEM sobrescrever globais) ========== */
 @import url('./pages/profile.css');
 @import url('./pages/login.css');
+@import url('./pages/suggestions.css');
 
 /* ========== UTILITIES FINAIS (sempre por último) ========== */

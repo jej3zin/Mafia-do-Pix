@@ -90,8 +90,12 @@ export const mockPosts = [
   {
     id: 'p1',
     userId: 'u1',
-    content: 'Primeiro post do Máfia do Pix 😈',
+    content: 'Primeiro post da Máfia do Pix 😈, fino senhores 🍷🗿',
     likes: 100,
+    dislikes: 1,
+    comments: 15,
+    saves: 0,
+    shares: 5,
     tags: [],
     createdAt: '2026-01-05, 11:00',
   },
@@ -101,7 +105,7 @@ export const mockPosts = [
     content:
       'çtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtzçtz',
     likes: 25,
-    tags: ['alphabet', 'spam'],
+    tags: ['spam'],
     createdAt: '2026-01-04',
   },
   {
@@ -110,7 +114,7 @@ export const mockPosts = [
     content:
       'Ataque coordenado do cauã HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH',
     likes: 40,
-    tags: ['alphabet', 'texts'],
+    tags: ['texts'],
     createdAt: '2026-01-03',
   },
   {
@@ -119,7 +123,7 @@ export const mockPosts = [
     content:
       'RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO',
     likes: 40,
-    tags: ['alphabet', 'texts'],
+    tags: ['texts'],
     createdAt: '2026-01-03',
   },
   {
@@ -174,7 +178,7 @@ export const mockPosts = [
     content:
       'A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A. A',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -183,7 +187,7 @@ export const mockPosts = [
     content:
       'B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B. B',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -192,7 +196,7 @@ export const mockPosts = [
     content:
       'C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C. C',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -201,7 +205,7 @@ export const mockPosts = [
     content:
       'D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D. D',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -210,7 +214,7 @@ export const mockPosts = [
     content:
       'E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E. E',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -219,7 +223,7 @@ export const mockPosts = [
     content:
       'F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F. F',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -228,7 +232,7 @@ export const mockPosts = [
     content:
       'G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G. G',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -237,7 +241,7 @@ export const mockPosts = [
     content:
       'H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H. H',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -246,7 +250,7 @@ export const mockPosts = [
     content:
       'I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I. I',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -255,7 +259,7 @@ export const mockPosts = [
     content:
       'J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J. J',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -264,7 +268,7 @@ export const mockPosts = [
     content:
       'K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K. K',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -273,7 +277,7 @@ export const mockPosts = [
     content:
       'L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L. L',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -282,7 +286,7 @@ export const mockPosts = [
     content:
       'M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M. M',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -291,7 +295,7 @@ export const mockPosts = [
     content:
       'N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N. N',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -300,7 +304,7 @@ export const mockPosts = [
     content:
       'O. O. O. O. O. O. O. O. O. O. O. O. O. O O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O. O',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -309,7 +313,7 @@ export const mockPosts = [
     content:
       'P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P. P',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -318,7 +322,7 @@ export const mockPosts = [
     content:
       'Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q. Q',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -327,7 +331,7 @@ export const mockPosts = [
     content:
       'R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R. R',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -336,7 +340,7 @@ export const mockPosts = [
     content:
       'S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S. S',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -345,7 +349,7 @@ export const mockPosts = [
     content:
       'T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T. T',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -354,7 +358,7 @@ export const mockPosts = [
     content:
       'U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U. U',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -363,7 +367,7 @@ export const mockPosts = [
     content:
       'V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V. V',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -372,7 +376,7 @@ export const mockPosts = [
     content:
       'W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W. W',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -381,7 +385,7 @@ export const mockPosts = [
     content:
       ' X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X. X',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -390,7 +394,7 @@ export const mockPosts = [
     content:
       'Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z. Z',
     likes: 40,
-    tags: ['alphabet', 'texts', 'spam'],
+    tags: ['alphabet'],
     createdAt: '2026-01-07, 12:03',
   },
   /* Números */
@@ -400,7 +404,7 @@ export const mockPosts = [
     content:
       '1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -409,7 +413,7 @@ export const mockPosts = [
     content:
       '1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?1?',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -418,7 +422,7 @@ export const mockPosts = [
     content:
       '2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.2.',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -427,7 +431,7 @@ export const mockPosts = [
     content:
       '2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?2?',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -436,7 +440,7 @@ export const mockPosts = [
     content:
       '3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.3.',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -445,7 +449,7 @@ export const mockPosts = [
     content:
       '3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?3?',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -454,7 +458,7 @@ export const mockPosts = [
     content:
       '4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.4.',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -463,7 +467,7 @@ export const mockPosts = [
     content:
       '4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?4?',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -472,7 +476,7 @@ export const mockPosts = [
     content:
       '5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.5.',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -481,7 +485,7 @@ export const mockPosts = [
     content:
       '5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?5?',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -490,7 +494,7 @@ export const mockPosts = [
     content:
       '6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.6.',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -499,7 +503,7 @@ export const mockPosts = [
     content:
       '6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?6?',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -508,7 +512,7 @@ export const mockPosts = [
     content:
       '7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.7.',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -517,7 +521,7 @@ export const mockPosts = [
     content:
       '7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?7?',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -526,7 +530,7 @@ export const mockPosts = [
     content:
       '8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.8.',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -535,7 +539,7 @@ export const mockPosts = [
     content:
       '8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?8?',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -544,7 +548,7 @@ export const mockPosts = [
     content:
       '9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.9.',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -553,7 +557,7 @@ export const mockPosts = [
     content:
       '9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?9?',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -562,7 +566,7 @@ export const mockPosts = [
     content:
       '10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.10.1',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   {
@@ -571,7 +575,7 @@ export const mockPosts = [
     content:
       '10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?10?1',
     likes: 40,
-    tags: ['numbers', 'spam'],
+    tags: ['numbers'],
     createdAt: '2026-01-07, 12:03',
   },
   /* Mano, Porquê */

@@ -34,7 +34,17 @@
     transform: translateX(-50%);
   }
 }
-
+.submenu-link {
+  padding: 0 0.25rem;
+  display: flex;
+  gap: var(--gap-04);
+  position: absolute;
+  top: 10rem;
+  left: 50%;
+  border-radius: var(--radius-02);
+  background: var(--funds-02);
+  transform: translateX(-50%);
+}
 /* === error page === */
 .pageErrorhidden {
   display: none;

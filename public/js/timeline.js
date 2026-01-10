@@ -23,9 +23,9 @@ export function renderTimeline({ tag = null } = {}) {
 
     el.innerHTML = `
       <header class="post-header">
-        <div class="box-info-left">
+        <div id="viewProfile" class="box-info-left">
           <img src="${user.avatar}" alt="${user.username}">
-          <div>
+          <div class="user-info">
             <strong>${user.name}</strong>
             <span>@${user.username}</span>
           </div>
@@ -45,7 +45,29 @@ export function renderTimeline({ tag = null } = {}) {
       </div>
 
       <footer class="post-footer">
-        <span><ion-icon name="heart"></ion-icon> ${post.likes}</span>
+        <div class="post-stats">
+          <div class="post-interactions">
+             <span class="post-interac-base post-likes"><ion-icon name="heart"></ion-icon> ${
+               post.likes || 0
+             }</span>
+             <span class="post-interac-base post-dislikes"><ion-icon name="heart-dislike"></ion-icon> ${
+               post.dislikes || 0
+             }</span>
+             <span class="post-interac-base post-comments"><ion-icon name="chatbubble"></ion-icon> ${
+               post.comments || 0
+             }</span>
+          </div>
+        
+          <div class="post-interactions-2">
+            <span class="post-interac-base"><ion-icon name="bookmark"></ion-icon> ${
+              post.saves || 0
+            }</span>
+            <span class="post-interac-base"><ion-icon name="repeat"></ion-icon> ${
+              post.shares || 0
+            }</span>
+          </div>
+        </div>
+
         <div class="post-tags">
           ${post.tags
             .map((t) => `<a href="/pages/${t}.html" class="tag">#${t}</a>`)

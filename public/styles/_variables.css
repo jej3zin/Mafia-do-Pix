@@ -55,8 +55,9 @@
   /* ===== UTILITY COLORS ===== */
   --attention-01: #fedc00ff;
 
-  --danger-01: #b33a36;
-  --danger-02: #c9302c;
+  --danger-01: #ff0800;
+  --danger-02: #ff0800;
+  --danger-bg-01: rgba(255, 8, 0, 0.25);
   --danger-shadow-01: 0 0 13px 3px #b33a3680;
   --danger-shadow-02: 0 0 13px 3px #c9302c80;
 
@@ -67,9 +68,8 @@
 
   /* ===== BORDERS ===== */
   --border-01: 1px solid rgba(255, 255, 255, 0.06);
-  --border-01-2: 1px solid rgba(255, 255, 255, 0.2);
   --border-02: 1px solid rgba(255, 255, 255, 0.12);
-  --border-03: 1px solid rgba(255, 255, 255, 0.6);
+  --border-03: 1px solid rgba(255, 255, 255, 0.24);
   --card-border: 1px solid rgba(255, 255, 255, 0.04);
 
   /* ===== SHADOWS ===== */
@@ -97,12 +97,4 @@
 
   /* ===== TRANSITIONS ===== */
   --anima-01: 0.3s ease all;
-}
-
-/* ========== LIGHT THEME ========== */
-[data-theme='light'] {
-}
-
-/* ========== DARK THEME ========== */
-[data-theme='dark'] {
 }

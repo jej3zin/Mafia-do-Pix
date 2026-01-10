@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Máfia do Pix | Boa Noite</title>
+    <title>Sugestão | Máfia do Pix</title>
     <link rel="icon" href="/asset/briefing/logo_02.webp" />
 
     <!-- Import CSS -->
@@ -11,7 +11,8 @@
 
     <!-- Script Loader -->
     <script type="module" src="/js/loader.js"></script>
-    <script type="module" src="/js/components/toast.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
     <!-- Markdown render -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -73,7 +74,7 @@
             <ion-icon name="create"></ion-icon>
           </a>
 
-          <button id="openNotif" class="openNotif">
+          <button id="openNotif" class="openNotif" title="Notificações">
             <ion-icon name="notifications"></ion-icon>
           </button>
 
@@ -106,21 +107,31 @@
       </header>
 
       <main class="main">
-        <div class="main-banner">
-          <h1>Máfia do Pix</h1>
-          <p class="subtitle">Boa noite mais inesperado.</p>
+        <section class="suggestion-section">
+          <div class="suggestion-box">
+            <h1>Envie sua sugestão</h1>
+            <p>
+              Sua opinião é muito importante para nós! Utilize o formulário
+              abaixo para enviar suas sugestões e ajudar a melhorar nosso
+              conteúdo.
+            </p>
 
-          <nav class="submenu-link">
-            <a class="nav-links" href="/pages/bro.html">Mano, Porquê...</a>
-            <a class="nav-links activeNav" href="/pages/goodnight.html"
-              >Boa Noite</a
-            >
-          </nav>
+            <form id="suggestionForm" class="suggestion-form">
+              <label for="suggestionInput"
+                >Escreva o username e Sua Sugestão:</label
+              >
+              <textarea
+                id="suggestionInput"
+                name="message"
+                rows="6"
+                placeholder="Digite sua sugestão aqui..."
+                required
+              ></textarea>
 
-          <img src="/asset/briefing/banner-02.webp" alt="banner" />
-        </div>
-
-        <div id="timeline" class="timeline"></div>
+              <button type="submit" class="submit-btn">Enviar Sugestão</button>
+            </form>
+          </div>
+        </section>
       </main>
 
       <footer class="foot">
@@ -168,14 +179,9 @@
     </div>
 
     <div id="toast-root"></div>
-    <div id="errorPage" class="pageErrorhidden"></div>
 
     <script type="module" src="/js/config/auth.js"></script>
 
     <script type="module" src="/js/index.js"></script>
-    <script type="module">
-      import { renderTimeline } from '/js/timeline.js';
-      renderTimeline({ tag: 'goodnight' });
-    </script>
   </body>
 </html>

@@ -14,6 +14,7 @@
   align-items: center;
   justify-content: space-between;
 }
+/* left */
 .box-info-left {
   display: flex;
   align-items: center;
@@ -23,8 +24,12 @@
   font-size: 1.1rem;
 }
 .box-info-left span {
-  font-size: 0.9rem;
+  font-size: 0.84rem;
   color: var(--text-02);
+  &:hover {
+    text-decoration: underline;
+    color: var(--brand-01);
+  }
 }
 .box-info-left img {
   height: 3.5rem;
@@ -32,7 +37,13 @@
   object-fit: cover;
   border-radius: 50%;
 }
-box-info-right {
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Right */
+.box-info-right {
   color: var(--text-02);
 }
 .post-body {
@@ -65,6 +76,27 @@ box-info-right {
   color: var(--brand-01);
 }
 
+.post-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: var(--border-02);
+  border-bottom: var(--border-02);
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+.post-interactions {
+  margin-right: auto;
+}
+.post-interactions-2 {
+  margin-left: auto;
+}
+.post-interactions,
+.post-interactions-2 {
+  display: flex;
+  gap: 1rem;
+}
+
 .post-footer span {
   display: flex;
   align-items: center;
@@ -72,7 +104,39 @@ box-info-right {
 .post-footer ion-icon {
   margin-right: 0.5rem;
   font-size: 1.1rem;
+}
+/* Interativos */
+.post-interac-base {
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-02);
+  transition: var(--anima-01);
+}
+/* Like */
+.post-likes {
+  background: var(--danger-bg-01);
+}
+.post-likes ion-icon {
+  color: var(--danger-01);
+}
+.post-likes.liked {
   color: var(--brand-01);
+}
+/* Dislike */
+.post-dislikes {
+  background: var(--bg-03);
+}
+/* Comments */
+.post-comments {
+  background: var(--bg-03);
+}
+.post-likes:hover,
+.post-dislikes:hover,
+.post-comments:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 .post-tags {
@@ -82,7 +146,11 @@ box-info-right {
 }
 .tag {
   padding: 0.25rem 0.75rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   border-radius: var(--radius-03);
   background: var(--bg-03);
+  transition: var(--anima-01);
+}
+.tag:hover {
+  background: var(--brand-05);
 }

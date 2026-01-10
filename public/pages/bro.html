@@ -46,9 +46,7 @@
             <a class="nav-links" href="/pages/alphabet.html">Alfabeto</a>
             <a class="nav-links" href="/pages/numbers.html">Números</a>
             <a class="nav-links" href="/pages/texts.html">Textos</a>
-            <a class="nav-links" href="/pages/spam.html">Spans</a>
-            <a class="nav-links activeNav" href="/pages/bro.html">Mano, Porquê...</a>
-            <a class="nav-links" href="/pages/goodnight.html">Boa Noite</a>
+            <a class="nav-links" href="/pages/spam.html">Spam</a>
           </nav>
         </div>
 
@@ -66,6 +64,14 @@
           </div>
 
           <div id="searchResults" class="search-results"></div>
+
+          <a
+            href="/pages/suggestions.html"
+            class="head-create-btn"
+            title="Enviar sugestão"
+          >
+            <ion-icon name="create"></ion-icon>
+          </a>
 
           <button id="openNotif" class="openNotif">
             <ion-icon name="notifications"></ion-icon>
@@ -89,11 +95,34 @@
             <button class="headDrop-links" id="logoutBtn" style="display: none">
               <ion-icon name="log-out"></ion-icon>Sair
             </button>
+
+            <span class="spaceLine"></span>
+
+            <a href="/pages/suggestions.html" class="headDrop-links">
+              <ion-icon name="chatbubbles"></ion-icon>Feedback
+            </a>
           </div>
         </div>
       </header>
 
-      <main class="main"><div id="timeline" class="timeline"></div></main>
+      <main class="main">
+        <div class="main-banner">
+          <h1>Máfia do Pix</h1>
+          <p class="subtitle">
+            Mano, Porquê <strong>irritar</strong> o streamer é prazeroso?
+          </p>
+
+          <nav class="submenu-link">
+            <a class="nav-links activeNav" href="/pages/bro.html"
+              >Mano, Porquê...</a
+            >
+            <a class="nav-links" href="/pages/goodnight.html">Boa Noite</a>
+          </nav>
+
+          <img src="/asset/briefing/banner-02.webp" alt="banner" />
+        </div>
+        <div id="timeline" class="timeline"></div>
+      </main>
 
       <footer class="foot">
         <div class="foot-head">
