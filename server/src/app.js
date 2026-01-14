@@ -17,17 +17,18 @@ app.use(express.static('public'));
 // Configura CORS
 app.use(
   cors({
-    origin: ['https://mafiadopix.netlify.app', 'http://localhost:3333'],
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    origin: 'https://mafiadopix.netlify.app',
+    credentials: false,
   })
 );
+
 app.options('*', cors());
 
 app.use(helmet());
 app.use(express.json());
 
 app.use(limiter);
+
 app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
 app.use('/posts', postRoutes);
