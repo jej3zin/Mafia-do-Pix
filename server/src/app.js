@@ -15,19 +15,12 @@ const app = express();
 app.use(
   cors({
     origin: 'https://mafiadopix.netlify.app',
-    optionsSuccessStatus: 204,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 
-app.use((req, res, next) => {
-  if (req.method === 'OPTIONS') {
-    return res.sendStatus(204);
-  }
-  next();
-});
-
 app.use(express.static('public'));
-
 app.use(helmet());
 app.use(express.json());
 
@@ -37,6 +30,7 @@ app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
 app.use('/posts', postRoutes);
 app.use('/interactions', interactionRoutes);
+
 app.use(errorHandler);
 
 export default app;
