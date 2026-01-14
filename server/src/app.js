@@ -15,6 +15,7 @@ const app = express();
 app.use(
   cors({
     origin: 'https://mafiadopix.netlify.app',
+    optionsSuccessStatus: 204,
   })
 );
 
