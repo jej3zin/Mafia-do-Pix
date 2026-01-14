@@ -9,6 +9,7 @@ import { hashPassword, comparePassword } from '../utils/hashpassword.js';
 import {
   saveRefreshToken,
   revokeAllRefreshTokens,
+  isRefreshTokenValid,
 } from '../services/refresh.service.js';
 import { logAuthEvent } from '../services/auth-log.service.js';
 
@@ -58,21 +59,6 @@ export const login = async (req, res) => {
     action: 'login',
     req,
   });
-
-  if (!user) {
-    await logAuthEvent({ action: 'fail', req });
-    return res.status(401).json({ error: 'Credenciais inválidas' });
-  }
-
-  if (user.status !== 'active') {
-    await logAuthEvent({ userId: user.id, action: 'fail', req });
-    return res.status(403).json({ error: 'Usuário desativado' });
-  }
-
-  if (!match) {
-    await logAuthEvent({ userId: user.id, action: 'fail', req });
-    return res.status(401).json({ error: 'Credenciais inválidas' });
-  }
 };
 
 /* ================= REGISTER ================= */
@@ -81,6 +67,9 @@ export const register = async (req, res) => {
 
   if (!name || !username || !email || !password)
     return res.status(400).json({ error: 'Dados incompletos' });
+
+  if (password.length < 16)
+    return res.status(400).json({ error: 'Senha muito curta' });
 
   const passwordHash = await hashPassword(password);
 

@@ -1,4 +1,5 @@
 // public/js/layout/header.js
+import { API_URL } from '../config/api.js';
 import { getSession } from '../config/session.js';
 
 const openNotif = document.getElementById('openNotif');

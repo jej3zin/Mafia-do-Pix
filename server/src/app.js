@@ -27,11 +27,11 @@ app.use(
 app.use(helmet());
 app.use(express.json());
 
+app.use(limiter);
 app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
 app.use('/posts', postRoutes);
 app.use('/interactions', interactionRoutes);
-app.use(limiter);
 app.use(errorHandler);
 
 export default app;
