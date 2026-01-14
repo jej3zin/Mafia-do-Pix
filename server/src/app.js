@@ -12,8 +12,6 @@ import { limiter } from './middleware/rateLimit.middleware.js';
 
 const app = express();
 
-app.use(express.static('public'));
-
 app.use(
   cors({
     origin: 'https://mafiadopix.netlify.app',
@@ -26,6 +24,8 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+app.use(express.static('public'));
 
 app.use(helmet());
 app.use(express.json());

@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
       toast('Preencha usuário e senha', 'error');
       return;
     }
-
     try {
       const json = await request('/auth/login', data);
       saveSession(json);
@@ -84,6 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    toast.loading('Criando conta...');
+
     try {
       await request('/auth/register', data);
 
@@ -98,6 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
       location.reload();
     } catch (err) {
       toast(err.message || 'Erro ao criar conta', 'error');
+    } finally {
+      toast.dismiss(); // 🔥 remove loader SEMPRE
     }
   });
 });
