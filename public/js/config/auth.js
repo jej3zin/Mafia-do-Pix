@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    toast.loading('Criando conta...');
+    toast('Criando conta...', 'loading');
 
     try {
       await request('/auth/register', data);
@@ -99,8 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
       location.reload();
     } catch (err) {
       toast(err.message || 'Erro ao criar conta', 'error');
-    } finally {
-      toast.dismiss(); // 🔥 remove loader SEMPRE
     }
   });
 });
