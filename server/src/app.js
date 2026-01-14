@@ -7,7 +7,6 @@ import authRoutes from './routes/auth.routes.js';
 import userRoutes from './routes/user.routes.js';
 import postRoutes from './routes/post.routes.js';
 import interactionRoutes from './routes/interaction.routes.js';
-import { auth } from './middleware/auth.middleware.js';
 import { errorHandler } from './middleware/error.middleware.js';
 import { limiter } from './middleware/rateLimit.middleware.js';
 
@@ -23,6 +22,7 @@ app.use(
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
+app.options('*', cors());
 
 app.use(helmet());
 app.use(express.json());
