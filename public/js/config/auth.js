@@ -14,7 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
       body: JSON.stringify(payload),
     });
 
-    const data = await res.json().catch(() => null);
+    if (res.status === 204) return null;
+
+    let data = null;
+    try {
+      data = await res.json();
+    } catch {}
 
     if (!res.ok) {
       throw new Error(data?.error || 'Erro na requisição');

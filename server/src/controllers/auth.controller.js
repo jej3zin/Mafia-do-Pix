@@ -81,13 +81,13 @@ export const register = async (req, res) => {
   });
   const createdUser = rows[0];
 
-  res.status(201).json({ message: 'Usuário criado com sucesso' });
-
-  await logAuthEvent({
+  logAuthEvent({
     userId: createdUser.id,
     action: 'register',
     req,
-  });
+  }).catch(console.error);
+
+  return res.status(201).json({ message: 'Usuário criado com sucesso' });
 };
 
 /* ================= ME ================= */
