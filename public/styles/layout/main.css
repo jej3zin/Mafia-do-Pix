@@ -66,3 +66,77 @@
   justify-content: center;
   gap: 12px;
 }
+
+/* about page */
+.about-section {
+  padding: 0.25rem;
+}
+.art-we,
+.art-target,
+.art-attencion {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-04);
+  border-bottom: 1px solid var(--brand-01);
+}
+.art-we img,
+.art-target img,
+.art-attencion img {
+  width: 12rem;
+  object-fit: cover;
+}
+.art-we h2,
+.art-target h2,
+.art-attencion h2 {
+  font-size: 1.75rem;
+  color: var(--brand-01);
+}
+
+/* Section */
+.about-caracts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-04);
+}
+.about-prs {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-04);
+  border: var(--border-02);
+  border-radius: var(--radius-03);
+  transition: var(--anima-01);
+}
+.about-prs:hover {
+  border-color: var(--brand-01);
+  box-shadow: var(--shadow-banner);
+  transform: translateY(-7px);
+}
+.about-prs img {
+  width: 15rem;
+  object-fit: cover;
+  transition: var(--anima-01);
+  transform: scale(1) perspective(1000px) rotateY(0deg);
+}
+.about-prs img:hover {
+  transform: scale(1.05) perspective(2000px) rotateY(20deg);
+}
+.streamer-tags {
+  margin: 0.75rem 0 1.25rem 0;
+}
+
+.social-streamers h3 {
+  margin: 0.75rem 0;
+}
+.social-streamers div {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-04);
+}
+.social-streamers a {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-02);
+}

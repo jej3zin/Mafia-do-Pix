@@ -114,7 +114,7 @@ export const mockPosts = [
     content:
       'Ataque coordenado do cauã HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH',
     likes: 40,
-    tags: ['texts'],
+    tags: ['texts', 'spam'],
     createdAt: '2026-01-03',
   },
   {
@@ -123,7 +123,7 @@ export const mockPosts = [
     content:
       'RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO RO',
     likes: 40,
-    tags: ['texts'],
+    tags: ['spam'],
     createdAt: '2026-01-03',
   },
   {
@@ -695,5 +695,121 @@ export const mockPosts = [
     likes: 40,
     tags: ['goodnight'],
     createdAt: '2026-01-07, 12:57',
+  },
+  {
+    id: 'p65',
+    userId: 'u6',
+    content:
+      '$ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ ',
+    likes: 25,
+    tags: ['spam'],
+    createdAt: '2026-01-20, 07:57pm',
+  },
+  {
+    id: 'p66',
+    userId: 'u6',
+    content:
+      '$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?$?',
+    likes: 10,
+    tags: ['spam'],
+    createdAt: '2026-01-20, 07:58pm',
+  },
+  {
+    id: 'p67',
+    userId: 'u6',
+    content:
+      '$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿$¿',
+    likes: 12,
+    tags: ['spam'],
+    createdAt: '2026-01-20, 07:59pm',
+  },
+  {
+    id: 'p68',
+    userId: 'u6',
+    content:
+      'ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ÕRL, ',
+    likes: 50,
+    tags: ['spam'],
+    createdAt: '2026-01-20, 08:00pm',
+  },
+  {
+    id: 'p69',
+    userId: 'u6',
+    content:
+      'ÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇÇ',
+    likes: 23,
+    tags: ['spam'],
+    createdAt: '2026-01-20, 08:15pm',
+  },
+  {
+    id: 'p70',
+    userId: 'u3',
+    content:
+      'DARÃÃAA RÃÃAA ARÃÃAA RÃÃAA DRÃÃAA RÃÃAA RÃÃAA ARÃÃAA RÃÃAA DRÃÃAA RÃÃAA RÃÃAA DARÃÃAA RÃÃAA ARÃÃAA RÃÃAA DRÃÃAA RÃÃAA RÃÃAA ARÃÃAA RÃÃAA DRÃÃAA RÃÃAA RÃÃAA DARÃÃAA RÃÃAA ARÃÃAA RÃÃAA DRÃÃAA RÃÃAA RÃÃAA ARÃÃAA RÃÃAA DRÃÃAA RÃÃAA RÃÃAA DARÃÃAA RÃÃAA AR',
+    likes: 25,
+    tags: ['spam'],
+    createdAt: '2026-01-20, 07:57pm',
+  },
+  {
+    id: 'p71',
+    userId: 'u8',
+    content:
+      'PÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇPÇ',
+    likes: 25,
+    tags: ['spam'],
+    createdAt: '2026-01-20, 08:01pm',
+  },
+  {
+    id: 'p72',
+    userId: 'u9',
+    content:
+      'RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RARA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RARA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA RA ',
+    likes: 25,
+    tags: ['spam'],
+    createdAt: '2026-01-20, 07:57pm',
+  },
+  {
+    id: 'p73',
+    userId: 'u10',
+    content:
+      'KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU KU K',
+    likes: 25,
+    tags: ['spam'],
+    createdAt: '2026-01-20, 09:57pm',
+  },
+  {
+    id: 'p74',
+    userId: 'u9',
+    content:
+      'Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û Û ',
+    likes: 25,
+    tags: ['spam'],
+    createdAt: '2026-01-20, 10:21pm',
+  },
+  {
+    id: 'p75',
+    userId: 'u11',
+    content:
+      'CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,CALADOXXX,',
+    likes: 25,
+    tags: ['spam'],
+    createdAt: '2026-01-20, 10:05pm',
+  },
+  {
+    id: 'p76',
+    userId: 'u9',
+    content:
+      'ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇML ÇM',
+    likes: 25,
+    tags: ['spam'],
+    createdAt: '2026-01-20, 10:12pm',
+  },
+  {
+    id: 'p77',
+    userId: 'u4',
+    content: 'BOA NOITE, MANDA SALVE PICOLÉ DE ASFALTO',
+    likes: 73,
+    tags: ['goodnight'],
+    createdAt: '2026-01-20, 10:17pm',
   },
 ];
