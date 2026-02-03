@@ -1,6 +1,5 @@
-//js/components/search.js
-import { API_URL } from '../config/api.js';
 import { escapeHTML } from '../utils/index.js';
+import { mockUsers, mockPosts } from '../mock-db.js';
 
 const input = document.getElementById('searchInput');
 const resultsBox = document.getElementById('searchResults');
@@ -8,6 +7,7 @@ const clearIcon = document.querySelector('.clear-icon');
 
 let debounceTimer;
 
+/* ========= INPUT ========= */
 if (input) {
   input.addEventListener('input', () => {
     clearTimeout(debounceTimer);
@@ -15,70 +15,84 @@ if (input) {
     const q = input.value.trim();
 
     if (q.length < 2) {
-      // busca só quando >=2 chars
       clearResults();
       return;
     }
 
     debounceTimer = setTimeout(() => search(q), 300);
   });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') clearResults();
+  });
 }
 
+/* ========= CLEAR ========= */
 clearIcon?.addEventListener('click', () => {
-  input.value = '';
+  if (input) input.value = '';
   clearResults();
 });
 
 document.addEventListener('click', (e) => {
-  if (!resultsBox.contains(e.target) && e.target !== input) {
+  if (resultsBox && !resultsBox.contains(e.target) && e.target !== input) {
     clearResults();
   }
 });
 
+/* ========= SEARCH ========= */
 async function search(q) {
-  try {
-    showLoading(); // loading skeleton
+  if (!resultsBox) return;
 
-    const [usersRes, postsRes] = await Promise.all([
-      fetch(`${API_URL}/users/search?q=${encodeURIComponent(q)}`),
-      fetch(`${API_URL}/posts/search?q=${encodeURIComponent(q)}`),
-    ]);
+  showLoading();
 
-    const users = usersRes.ok ? await usersRes.json() : [];
-    const posts = postsRes.ok ? await postsRes.json() : [];
+  const qLower = q.toLowerCase();
 
-    renderResults(users, posts, q); // highlight
-  } catch (err) {
-    console.error('Search error', err);
-  }
+  const users = mockUsers.filter(
+    (u) =>
+      (u.username || '').toLowerCase().includes(qLower) ||
+      (u.name || '').toLowerCase().includes(qLower)
+  );
+
+  const posts = mockPosts.filter((p) =>
+    (p.content || '').toLowerCase().includes(qLower)
+  );
+
+  renderResults(users, posts, q);
 }
 
+/* ========= LOADING ========= */
 function showLoading() {
+  if (!resultsBox) return;
+
   resultsBox.innerHTML = `
-    <div class="skeleton">Carregando...</div>
     <div class="skeleton">Carregando...</div>
     <div class="skeleton">Carregando...</div>
   `;
   resultsBox.classList.add('show');
 }
 
+/* ========= RENDER ========= */
 function renderResults(users, posts, query) {
+  if (!resultsBox) return;
+
   if (!users.length && !posts.length) {
     resultsBox.innerHTML = `<p class="empty">Nada encontrado</p>`;
     resultsBox.classList.add('show');
     return;
   }
 
-  const highlight = (text) => {
-    const regex = new RegExp(`(${query})`, 'gi');
+  const highlight = (text = '') => {
+    const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(${safeQuery})`, 'gi');
     return escapeHTML(text).replace(regex, '<mark>$1</mark>');
   };
 
   resultsBox.innerHTML = `
     ${users
+      .slice(0, 5)
       .map(
         (u) => `
-      <button class="search-item user" data-user="${u.username}">
+      <button class="search-item user" data-user="${escapeHTML(u.username)}">
         <strong>@${highlight(u.username)}</strong>
         <span>${highlight(u.name)}</span>
       </button>
@@ -87,13 +101,19 @@ function renderResults(users, posts, query) {
       .join('')}
 
     ${posts
-      .map(
-        (p) => `
+      .slice(0, 5)
+      .map((p) => {
+        const preview =
+          p.content?.length > 60
+            ? p.content.slice(0, 60) + '...'
+            : p.content || '';
+
+        return `
       <button class="search-item post" data-post="${p.id}">
-        <span>${highlight(p.content.slice(0, 60))}...</span>
+        <span>${highlight(preview)}</span>
       </button>
-    `
-      )
+    `;
+      })
       .join('')}
   `;
 
@@ -101,21 +121,23 @@ function renderResults(users, posts, query) {
   bindClicks();
 }
 
+/* ========= BINDS ========= */
 function bindClicks() {
-  resultsBox.querySelectorAll('.search-item.user').forEach((btn) => {
-    btn.onclick = () => {
-      window.location.href = `/@${btn.dataset.user}`;
-    };
+  if (!resultsBox) return;
+
+  resultsBox.querySelectorAll('.user').forEach((btn) => {
+    btn.onclick = () => (location.href = `/@${btn.dataset.user}`);
   });
 
-  resultsBox.querySelectorAll('.search-item.post').forEach((btn) => {
-    btn.onclick = () => {
-      window.location.href = `/post/${btn.dataset.post}`;
-    };
+  resultsBox.querySelectorAll('.post').forEach((btn) => {
+    btn.onclick = () => (location.href = `/post/${btn.dataset.post}`);
   });
 }
 
+/* ========= CLEAR ========= */
 function clearResults() {
+  if (!resultsBox) return;
+
   resultsBox.innerHTML = '';
   resultsBox.classList.remove('show');
 }

@@ -5,6 +5,9 @@ export const mockUsers = [
     username: 'jej3zin',
     name: 'Jean',
     avatar: 'https://avatars.githubusercontent.com/u/127148233?v=4',
+    bio: 'Construindo a Máfia. Ihneeeeeeeeeeee',
+    followers: 24,
+    following: 1,
   },
   {
     id: 'u2',
@@ -95,7 +98,7 @@ export const mockPosts = [
     dislikes: 1,
     comments: 15,
     saves: 0,
-    shares: 5,
+    shares: 7,
     tags: [],
     createdAt: '2026-01-05, 11:00',
   },

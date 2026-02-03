@@ -1,62 +1,81 @@
-// public/js/profile.js
-import { API_URL } from './config/api.js';
+import { mockUsers, mockPosts } from './mock-db.js';
 import { escapeHTML, formatDate } from './utils/index.js';
 
-export async function initProfile(username) {
-  const res = await fetch(`${API_URL}/users/username/${username}`);
+/* ========= ELEMENTOS ========= */
+const header = document.getElementById('profileHeader');
+const postsBox = document.getElementById('profilePosts');
+const skeleton = document.getElementById('profileSkeleton');
 
-  if (res.status === 404) {
-    throw new Error('USER_NOT_FOUND');
-  }
-
-  if (!res.ok) {
-    throw new Error('PROFILE_ERROR');
-  }
-
-  const user = await res.json();
-
-  renderProfile(user);
-  renderFeed(user.posts || []);
-  renderFriends?.(user); // se usar
+/* ========= HELPERS ========= */
+function getUsernameFromURL() {
+  return location.pathname.replace(/^\/@/, '').replace(/\/$/, '').toLowerCase();
 }
 
-/* ========= RENDER PROFILE ======== */
-function renderProfile(user) {
-  document.title = `${user.name} (@${user.username})`;
+/* ========= INIT ========= */
+export function initProfile() {
+  const username = getUsernameFromURL();
 
-  document.getElementById('profileName').textContent = user.name;
-  document.getElementById('profileUsername').textContent = '@' + user.username;
-  document.getElementById('profileBio').textContent = user.bio || '';
+  const user = mockUsers.find((u) => u.username.toLowerCase() === username);
 
-  document.getElementById('profileAvatar').src =
-    user.avatar_url || '/img/default-avatar.png';
-
-  document.getElementById('profileBanner').src =
-    user.banner_url || '/img/default-banner.png';
-
-  document.getElementById('profileSkeleton')?.remove();
-  document.getElementById('profile')?.classList.remove('hidden');
-}
-
-/* ========= FEED ======== */
-function renderFeed(posts) {
-  const feed = document.getElementById('profileFeed');
-  if (!feed) return;
-
-  if (!posts.length) {
-    feed.innerHTML = '<p class="empty">Nenhum post ainda.</p>';
+  if (!user) {
+    renderNotFound();
     return;
   }
 
-  feed.innerHTML = posts
+  const posts = mockPosts
+    .filter((p) => p.userId === user.id)
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+  renderProfile(user);
+  renderPosts(posts);
+
+  skeleton?.remove();
+}
+
+/* ========= RENDER USER ========= */
+function renderProfile(user) {
+  document.title = `${user.name} (@${user.username})`;
+
+  header.innerHTML = `
+    <div class="profile-head">
+      <img 
+        src="${user.avatar}" 
+        class="profile-avatar"
+        alt="${escapeHTML(user.username)}"
+      >
+
+      <div class="profile-head-info">
+        <h2>@${escapeHTML(user.username)}</h2>
+        <p>${escapeHTML(user.name)}</p>
+
+        ${user.bio ? `<p class="profile-bio">${escapeHTML(user.bio)}</p>` : ''}
+
+        <div class="profile-stats">
+          <span><strong>${user.followers ?? 0}</strong> seguidores</span>
+          <span><strong>${user.following ?? 0}</strong> seguindo</span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+/* ========= POSTS ========= */
+function renderPosts(posts) {
+  if (!posts.length) {
+    postsBox.innerHTML = `<p class="empty">Nenhum post ainda.</p>`;
+    return;
+  }
+
+  postsBox.innerHTML = posts
     .map(
       (p) => `
-    <article class="feed-post">
+    <article class="profile-post">
       <p>${escapeHTML(p.content)}</p>
-      <div class="feed-meta">
-        <span>${formatDate(p.created_at)}</span>
-        <span>❤️ ${p.likes_count ?? 0}</span>
-        <span>💬 ${p.comments_count ?? 0}</span>
+
+      <div class="post-meta">
+        <span>${formatDate(p.createdAt)}</span>
+        <span>❤️ ${p.likes ?? 0}</span>
+        <span>💬 ${p.comments ?? 0}</span>
       </div>
     </article>
   `
@@ -64,29 +83,14 @@ function renderFeed(posts) {
     .join('');
 }
 
-/* ========= FRIENDS ======== */
-function renderFriends(user) {
-  const container = document.getElementById('profileFriends');
-  if (!container || !user.friends?.length) return;
+/* ========= NOT FOUND ========= */
+function renderNotFound() {
+  skeleton?.remove();
 
-  container.innerHTML = user.friends
-    .map(
-      (f) => `
-    <button class="friend-card" data-user="${f.username}">
-      <strong>${escapeHTML(f.name)}</strong>
-      <span>@${f.username}</span>
-    </button>
-  `
-    )
-    .join('');
-
-  bindFriendClicks(container);
-}
-
-function bindFriendClicks(container) {
-  container.querySelectorAll('.friend-card').forEach((btn) => {
-    btn.onclick = () => {
-      location.href = `/@${btn.dataset.user}`;
-    };
-  });
+  header.innerHTML = `
+    <div class="profile-notfound">
+      <h2>Usuário não encontrado 💀</h2>
+      <a href="/index.html">Voltar</a>
+    </div>
+  `;
 }

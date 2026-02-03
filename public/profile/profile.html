@@ -1,16 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Máfia do Pix | @username</title>
-    <link rel="icon" href="/public/asset/briefing/logo_02.webp" />
+    <link rel="icon" href="/asset/briefing/logo_02.webp" />
+
+    <!-- Markdown render -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <!-- Import CSS -->
-    <link rel="stylesheet" href="/public/styles/index.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
 
     <!-- Script Loader -->
-    <script type="module" src="/public/js/loader.js"></script>
+    <script type="module" src="/js/loader.js"></script>
 
     <!-- Import Icons -->
     <script
@@ -25,7 +30,7 @@
   <body>
     <div id="preloader">
       <span class="loader">
-        <img src="/public/asset/briefing/logo_02.webp" alt="loading" />
+        <img src="/asset/briefing/logo_02.webp" alt="loading" />
       </span>
     </div>
 
@@ -33,7 +38,7 @@
       <header class="head">
         <div class="head-box-left">
           <a href="/index.html">
-            <img src="/public/asset/briefing/logo_02.webp" alt="logotipo" />
+            <img src="/asset/briefing/logo_02.webp" alt="logotipo" />
           </a>
 
           <nav class="head-nav">
@@ -61,9 +66,43 @@
 
           <div id="searchResults" class="search-results"></div>
 
-          <button id="avatarBtn" class="avatarBtn">
-            <img src="/public/asset/avatars/Avatar.webp" alt="Avatar" />
+          <a
+            href="/pages/suggestions.html"
+            class="head-create-btn"
+            title="Enviar sugestão"
+          >
+            <ion-icon name="create"></ion-icon>
+          </a>
+
+          <button id="openNotif" class="openNotif" title="Notificações">
+            <ion-icon name="notifications"></ion-icon>
           </button>
+
+          <button id="openHeadDrop" class="avatarBtn">
+            <img src="/asset/briefing/Avatar.webp" alt="Avatar" />
+          </button>
+
+          <div id="headDropdown" class="head-dropdown">
+            <p>Olá, <span id="hiUser">Visitante</span></p>
+            <button class="headDrop-links" id="viewsBtn">
+              <ion-icon name="person"></ion-icon>Perfil
+            </button>
+            <button class="headDrop-links" id="myaccountBtn">
+              <ion-icon name="person-circle"></ion-icon>Conta
+            </button>
+            <a href="/pages/login.html" class="headDrop-links" id="loginBtn">
+              <ion-icon name="log-in"></ion-icon>Login
+            </a>
+            <button class="headDrop-links" id="logoutBtn" style="display: none">
+              <ion-icon name="log-out"></ion-icon>Sair
+            </button>
+
+            <span class="spaceLine"></span>
+
+            <a href="/pages/suggestions.html" class="headDrop-links">
+              <ion-icon name="chatbubbles"></ion-icon>Feedback
+            </a>
+          </div>
         </div>
       </header>
 
@@ -76,7 +115,12 @@
         </section>
 
         <!-- PERFIL -->
-        <section class="profile hidden" id="profile">
+        <section class="profile">
+          <div id="profileHeader"></div>
+          <div id="profilePosts"></div>
+        </section>
+
+        <!-- <section class="profile hidden" id="profile">
           <section class="profile-banner">
             <img id="profileBanner" alt="" />
           </section>
@@ -111,13 +155,13 @@
               <div id="profileFriends"></div>
             </div>
           </section>
-        </section>
+        </section> -->
       </main>
 
       <footer class="foot">
         <div class="foot-head">
           <div class="logo">
-            <img src="/public/asset/briefing/logotipo-01.webp" alt="logotipo" />
+            <img src="/asset/briefing/logotipo-01.webp" alt="logotipo" />
           </div>
 
           <div class="foot-links">
@@ -141,6 +185,30 @@
         <p class="foot-copy">Copyright &copy; 2025-2027</p>
       </footer>
     </div>
-    <script type="module" src="/public/js/profile.js"></script>
+
+    <!-- Modal de Notificações / Release -->
+    <div id="notifModal" class="notif-modal hidden">
+      <button id="closeNotif">
+        <ion-icon name="close"></ion-icon>
+      </button>
+      <div class="notif-box">
+        <header class="notif-header">
+          <h3>📦 Última release</h3>
+        </header>
+
+        <div id="notifContent" class="notif-content">
+          <p>Carregando release…</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast-root"></div>
+    <div id="errorPage" class="pageErrorhidden"></div>
+
+    <script type="module" src="/js/config/auth.js"></script>
+
+    <script type="module" src="/js/index.js"></script>
+
+    <script type="module" src="/js/profile.js"></script>
   </body>
 </html>
