@@ -91,7 +91,7 @@ export const mockUsers = [
     id: 'u15',
     username: 'mark_sinistro87',
     name: 'Mark — Filósofo',
-    avatar: '/asset/imgs/Willzen.jpeg',
+    avatar: '/asset/imgs/mark.jpg',
   },
 ];
 
