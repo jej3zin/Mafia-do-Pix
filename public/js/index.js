@@ -1,3 +1,4 @@
+//js/index.js
 /* Loader & */
 import './loader.js';
 
@@ -10,8 +11,11 @@ import './components/search.js';
 import './components/toast.js';
 import './components/suggestions.js';
 
-/* Router */
-import './router.js';
+/* Modals */
+import './modal/modal.js';
 
 /* Config */
 import './config/auth.js';
+
+/* Router */
+import './router.js';

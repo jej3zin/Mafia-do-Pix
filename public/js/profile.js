@@ -1,10 +1,6 @@
+// profile.js
 import { mockUsers, mockPosts } from './mock-db.js';
 import { escapeHTML, formatDate } from './utils/index.js';
-
-/* ========= ELEMENTOS ========= */
-const header = document.getElementById('profileHeader');
-const postsBox = document.getElementById('profilePosts');
-const skeleton = document.getElementById('profileSkeleton');
 
 /* ========= HELPERS ========= */
 function getUsernameFromURL() {
@@ -12,13 +8,23 @@ function getUsernameFromURL() {
 }
 
 /* ========= INIT ========= */
-export function initProfile() {
-  const username = getUsernameFromURL();
+export function initProfile(usernameParam, root = document) {
+  const username = (usernameParam || getUsernameFromURL()).toLowerCase();
+
+  /* DOM SAFE (SPA SAFE) */
+  const header = root.querySelector('#profileHeader');
+  const postsBox = root.querySelector('#profilePosts');
+  const skeleton = root.querySelector('#profileSkeleton');
+
+  if (!header || !postsBox) {
+    console.warn('Profile DOM não encontrado');
+    return;
+  }
 
   const user = mockUsers.find((u) => u.username.toLowerCase() === username);
 
   if (!user) {
-    renderNotFound();
+    header.innerHTML = `<p>Usuário não encontrado 💀</p>`;
     return;
   }
 
@@ -26,14 +32,14 @@ export function initProfile() {
     .filter((p) => p.userId === user.id)
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
-  renderProfile(user);
-  renderPosts(posts);
+  renderProfile(user, header);
+  renderPosts(posts, postsBox);
 
-  skeleton?.remove();
+  if (skeleton) skeleton.classList.add('hidden');
 }
 
 /* ========= RENDER USER ========= */
-function renderProfile(user) {
+function renderProfile(user, header) {
   document.title = `${user.name} (@${user.username})`;
 
   header.innerHTML = `
@@ -59,8 +65,20 @@ function renderProfile(user) {
   `;
 }
 
+/* ========= MODAL RENDER ========= */
+export function renderProfileModal(username, root) {
+  root.innerHTML = `
+    <div class="profile-modal">
+      <div id="profileHeader"></div>
+      <div id="profilePosts"></div>
+    </div>
+  `;
+
+  initProfile(username, root);
+}
+
 /* ========= POSTS ========= */
-function renderPosts(posts) {
+function renderPosts(posts, postsBox) {
   if (!posts.length) {
     postsBox.innerHTML = `<p class="empty">Nenhum post ainda.</p>`;
     return;
@@ -69,7 +87,7 @@ function renderPosts(posts) {
   postsBox.innerHTML = posts
     .map(
       (p) => `
-    <article class="profile-post">
+    <article class="profile-post" data-post="${p.id}">
       <p>${escapeHTML(p.content)}</p>
 
       <div class="post-meta">
@@ -78,19 +96,22 @@ function renderPosts(posts) {
         <span>💬 ${p.comments ?? 0}</span>
       </div>
     </article>
-  `
+  `,
     )
     .join('');
+
+  bindPostClicks(postsBox);
 }
 
-/* ========= NOT FOUND ========= */
-function renderNotFound() {
-  skeleton?.remove();
+/* ========= EVENTS ========= */
+function bindPostClicks(postsBox) {
+  postsBox.querySelectorAll('.profile-post').forEach((el) => {
+    el.addEventListener('click', () => {
+      const id = el.dataset.post;
+      if (!id) return;
 
-  header.innerHTML = `
-    <div class="profile-notfound">
-      <h2>Usuário não encontrado 💀</h2>
-      <a href="/index.html">Voltar</a>
-    </div>
-  `;
+      history.pushState({}, '', `/post/${id}`);
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    });
+  });
 }

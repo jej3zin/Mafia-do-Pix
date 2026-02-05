@@ -1,3 +1,4 @@
+// components/search.js
 import { escapeHTML } from '../utils/index.js';
 import { mockUsers, mockPosts } from '../mock-db.js';
 
@@ -50,11 +51,11 @@ async function search(q) {
   const users = mockUsers.filter(
     (u) =>
       (u.username || '').toLowerCase().includes(qLower) ||
-      (u.name || '').toLowerCase().includes(qLower)
+      (u.name || '').toLowerCase().includes(qLower),
   );
 
   const posts = mockPosts.filter((p) =>
-    (p.content || '').toLowerCase().includes(qLower)
+    (p.content || '').toLowerCase().includes(qLower),
   );
 
   renderResults(users, posts, q);
@@ -96,7 +97,7 @@ function renderResults(users, posts, query) {
         <strong>@${highlight(u.username)}</strong>
         <span>${highlight(u.name)}</span>
       </button>
-    `
+    `,
       )
       .join('')}
 
@@ -118,19 +119,34 @@ function renderResults(users, posts, query) {
   `;
 
   resultsBox.classList.add('show');
-  bindClicks();
+}
+bindSearchNavigation();
+
+/* ========= NAVIGATION ========= */
+function navigate(url) {
+  if (location.pathname === url) return;
+
+  history.pushState({}, '', url);
+  window.dispatchEvent(new PopStateEvent('popstate'));
 }
 
-/* ========= BINDS ========= */
-function bindClicks() {
+/* ========= BINDS (EVENT DELEGATION) ========= */
+function bindSearchNavigation() {
   if (!resultsBox) return;
 
-  resultsBox.querySelectorAll('.user').forEach((btn) => {
-    btn.onclick = () => (location.href = `/@${btn.dataset.user}`);
-  });
+  resultsBox.addEventListener('click', (e) => {
+    const userBtn = e.target.closest('.user');
+    const postBtn = e.target.closest('.post');
 
-  resultsBox.querySelectorAll('.post').forEach((btn) => {
-    btn.onclick = () => (location.href = `/post/${btn.dataset.post}`);
+    if (userBtn) {
+      navigate(`/@${userBtn.dataset.user}`);
+      return;
+    }
+
+    if (postBtn) {
+      navigate(`/post/${postBtn.dataset.post}`);
+      return;
+    }
   });
 }
 

@@ -1,4 +1,4 @@
-// arquivo temporário /js/mock-db.js
+// arquivo temporário public/js/mock-db.js
 export const mockUsers = [
   {
     id: 'u1',
@@ -85,6 +85,12 @@ export const mockUsers = [
     id: 'u14',
     username: 'Willzen',
     name: 'Willzen',
+    avatar: '/asset/imgs/Willzen.jpeg',
+  },
+  {
+    id: 'u15',
+    username: 'mark_sinistro87',
+    name: 'Mark — Filósofo',
     avatar: '/asset/imgs/Willzen.jpeg',
   },
 ];
@@ -814,5 +820,23 @@ export const mockPosts = [
     likes: 73,
     tags: ['goodnight'],
     createdAt: '2026-01-20, 10:17pm',
+  },
+  {
+    id: 'p78',
+    userId: 'u2',
+    content:
+      'ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ÇMLÇMLÇML ',
+    likes: 73,
+    tags: ['spam'],
+    createdAt: '2026-02-05, 07:20pm',
+  },
+  {
+    id: 'p79',
+    userId: 'u15',
+    content:
+      '€ £ € £ RA DST HIV RA SO DST SO HIV€ £ € £ RA DST HIV RA SO DST SO HIV € £ € £ RA DST HIV RA SO DST SO HIV€ £ € £ RA DST HIV RA SO DST SO HIV € £ € £ RA DST HIV RA SO DST SO HIV€ £ € £ RA DST HIV RA SO DST SO HIV € £ € £ RA DST HIV RA SO DST SO HIV€ ',
+    likes: 101,
+    tags: ['spam'],
+    createdAt: '2026-02-05, 07:23pm',
   },
 ];

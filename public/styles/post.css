@@ -154,3 +154,35 @@
 .tag:hover {
   background: var(--brand-05);
 }
+
+/* Modal */
+.post-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.post-modal.hidden {
+  display: none;
+}
+
+.post-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.post-modal-box {
+  position: relative;
+  max-width: 700px;
+  margin: 5vh auto;
+  background: var(--bg-02);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.post-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

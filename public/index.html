@@ -42,7 +42,7 @@
           </a>
 
           <nav class="head-nav">
-            <a class="nav-links activeNav" href="/index.html">Home</a>
+            <a class="nav-links activeNav" href="/">Home</a>
             <a class="nav-links" href="/pages/about.html">Sobre</a>
             <a class="nav-links" href="/pages/alphabet.html">Alfabeto</a>
             <a class="nav-links" href="/pages/numbers.html">Números</a>
@@ -166,6 +166,21 @@
 
         <div id="notifContent" class="notif-content">
           <p>Carregando release…</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Posts -->
+    <div id="appModal" class="modal post-modal hidden">
+      <div class="modal-box post-modal-overlay" data-close="true"></div>
+
+      <div class="post-modal-box">
+        <button id="appModalClose" class="post-modal-close">
+          <ion-icon name="close"></ion-icon>
+        </button>
+
+        <div id="appModalContent">
+          <!-- post.js renderiza aqui -->
         </div>
       </div>
     </div>
